@@ -3,8 +3,8 @@
 Este repositório contém todas as configurações que eu utilizo no meu Vim.
 
 OBS: Todas as configurações encontradas neste repositório foram feitas
-utiliando o Neovim, não há garantia que tudo vá funcionar igualmente no Vim
-padrão.
+utiliando o [Neovim](https://github.com/neovim/neovim), não há garantia que
+tudo vá funcionar igualmente no Vim padrão.
 
 OBS2: Para abrir o Neovim a partir dos comandos 'vi' ou 'vim' no lugar de
 'nvim' basta adicionar um alias no seu arquivo .bashrc ou criar um arquivo
@@ -50,3 +50,8 @@ O *idioma* é o idioma a ser utilizado, por exemplo:
 
 Caso o arquivo de dicionário ainda não exista no seu computador, o vim irá
 baixá-lo para você.
+
+## Auto Completer - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+
+Para que o auto completer funcione é preciso compilá-lo, mais informações sobre
+isso [aqui](https://github.com/ycm-core/YouCompleteMe).
