@@ -27,6 +27,7 @@ set smarttab               " Makes tabbing smarter
 set expandtab              " Converts tabs to spaces
 
 set smartcase
+set ignorecase
 set smartindent            " Makes indenting smart
 set autoindent             " Good auto indent
 
