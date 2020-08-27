@@ -5,7 +5,11 @@ Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+
+" Plugins para a barra de status
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Plugins de navegação
 Plug 'justinmk/vim-sneak'
@@ -44,31 +48,52 @@ nnoremap <leader>gc :GCheckout<CR>
 " Atalho para abrir o FZF
 nnoremap <C-p> :FZF<Enter>
 
-" Configuração do esquema de cores
-set background=dark
-colorscheme gruvbox
-syntax on
-
 " Configura o plugin sneak
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
-highlight Sneak ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
-highlight SneakScope ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
-highlight SneakLabel ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
+"highlight Sneak ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
+"highlight SneakScope ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
+"highlight SneakLabel ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
 
+" Configuração do lightline
+"let g:lightline = {
+    "\ 'colorscheme': 'darcula',
+    "\ 'active': {
+    "\   'left': [ [ 'mode', 'paste' ],
+    "\             [ 'gitbranch', 'readonly', 'filename', 'modified', 'spell'] ]
+    "\ },
+    "\ 'component_function': {
+    "\   'gitbranch': 'FugitiveHead',
+    "\ },
+    "\ }
 
-let g:lightline = {
-    \ 'colorscheme': 'deus',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
-    \ },
-    \ }
+" Configuração do airline
+let g:airline_theme='deus'
+
+let g:airline_detect_spelllang = 1
+let g:airline_powerline_fonts = 1
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep='▶'
+let g:airline_right_sep='◀'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.branch = '⎇'
+
 
 set laststatus=2
+
+" Configuração do esquema de cores
+set background=dark
+colorscheme dracula
+syntax on
+
 
 if executable('rg')
     let g:rg_derive_root='true'
