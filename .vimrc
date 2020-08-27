@@ -18,13 +18,16 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
+" Intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Outros
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
-Plug 'git@github.com:ycm-core/YouCompleteMe.git'
+"Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
 
@@ -94,9 +97,9 @@ let g:Tex_BibtexFlavor = 'bibtex'
 set winaltkeys=no
 
 " Configura o YouCompleteMe
-let g:ycm_use_clangd = 0
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_use_clangd = 0
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"let g:ycm_add_preview_to_completeopt = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
 
