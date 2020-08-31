@@ -84,12 +84,14 @@ set background=dark
 colorscheme gruvbox
 
 " Customização do tema dracula
-let g:dracula#palette.fg        = ['#FFFFFF',  61]
-let g:dracula#palette.purple    = ['#855AF9', 141]
-let g:dracula#palette.color_4   =  '#855AF9'
-"let g:dracula#palette.comment   = ['#54F4EC',  61]
-"let g:dracula#palette.bg        = ['#00264D', 236]
-"let g:dracula_colorterm = 1
+if g:colors_name == 'dracula'
+    let g:dracula#palette.fg        = ['#FFFFFF',  61]
+    let g:dracula#palette.purple    = ['#855AF9', 141]
+    let g:dracula#palette.color_4   =  '#855AF9'
+    "let g:dracula#palette.comment   = ['#54F4EC',  61]
+    "let g:dracula#palette.bg        = ['#00264D', 236]
+    "let g:dracula_colorterm = 1
+endif  
 
 set termguicolors
 
