@@ -51,11 +51,6 @@ O *idioma* é o idioma a ser utilizado, por exemplo:
 Caso o arquivo de dicionário ainda não exista no seu computador, o vim irá
 baixá-lo para você.
 
-## Auto Completer - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
-
-Para que o auto completer funcione é preciso compilá-lo, mais informações sobre
-isso [aqui](https://github.com/ycm-core/YouCompleteMe).
-
 ## Fonte Utilizada
 
 Nesta configuração, a fonte utilizada é a RobotoMono Nerd Font Mono Medium.
