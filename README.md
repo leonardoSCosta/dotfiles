@@ -55,3 +55,18 @@ baixá-lo para você.
 
 Para que o auto completer funcione é preciso compilá-lo, mais informações sobre
 isso [aqui](https://github.com/ycm-core/YouCompleteMe).
+
+## Fonte Utilizada
+
+Nesta configuração, a fonte utilizada é a RobotoMono Nerd Font Mono Medium.
+Esta fonte e muitas outras, inclusive as que contém os ícones utilizados no
+airline, podem ser [instaladas a partir deste
+repositório](https://github.com/ryanoasis/nerd-fonts).
+
+Para instalar as fontes basta inserir os seguintes comandos no terminal:
+
+```shell
+git clone https://github.com/ryanoasis/nerd-fonts --depth=1
+cd nerd-fonts
+./install.sh
+```

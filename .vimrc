@@ -1,3 +1,15 @@
+" Instalar o gerenciador de plugins automaticamente caso ainda não esteja
+" instalado
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"if empty(glob('~/.config/nvim'))
+    "silent !mkdir ~/.config/nvim; touch ~/.config/nvim/init.vim
+"endif
+
 call plug#begin('~/.vim/plugged')
 
 " Plugins de temas de cor
@@ -5,6 +17,7 @@ Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 "Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/colorizer'
 
@@ -58,12 +71,11 @@ let g:sneak#use_ic_scs = 1
 "highlight SneakLabel ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
 
 " Configuração do airline
-let g:airline_theme='deus'
+let g:airline_theme='dracula'
 
 let g:airline_detect_spelllang = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_y = ''
-
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
@@ -72,25 +84,30 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+" Fonte utilizada: RobotoMono Nerd Font Mono Medium 11
 let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.spell = '📖'
-let g:airline_symbols.branch = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.spell = '暈'
+let g:airline_symbols.branch = ''
 
 set laststatus=2
 
 " Configuração do esquema de cores
 set background=dark
-colorscheme gruvbox
+colorscheme dracula
+
+if g:colors_name == 'nord'
+    let g:nord_bold_vertical_split_line=1
+    let g:nord_italic=1
+    let g:nord_italic_comments=1
+    let g:nord_uniform_diff_background = 1
+endif
 
 " Customização do tema dracula
 if g:colors_name == 'dracula'
     let g:dracula#palette.fg        = ['#FFFFFF',  61]
     let g:dracula#palette.purple    = ['#855AF9', 141]
     let g:dracula#palette.color_4   =  '#855AF9'
-    "let g:dracula#palette.comment   = ['#54F4EC',  61]
-    "let g:dracula#palette.bg        = ['#00264D', 236]
-    "let g:dracula_colorterm = 1
 endif  
 
 set termguicolors
