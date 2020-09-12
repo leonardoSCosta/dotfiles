@@ -41,6 +41,7 @@ todo_widget.widget = wibox.widget {
     },
     layout = wibox.layout.fixed.horizontal,
     set_text = function(self, new_value)
+        self.font = beautiful.font
         self.txt.text = new_value
     end,
     set_icon = function(self, new_value)
@@ -56,7 +57,7 @@ function todo_widget:update_counter(todos)
         end
     end
 
-    todo_widget.widget:set_text(todo_count)
+    --todo_widget.widget:set_text(todo_count)
 end
 
 local popup = awful.popup{

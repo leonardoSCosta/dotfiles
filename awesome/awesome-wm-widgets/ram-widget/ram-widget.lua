@@ -12,16 +12,16 @@ local function worker(args)
     ramgraph_widget = wibox.widget {
         border_width = 0,
         colors = {
-            '#74aeab', '#26403f'
+            '#20212B', '#BD93F9'
         },
         display_labels = false,
-        forced_width = 35,
+        forced_width = 25,
         widget = wibox.widget.piechart
     }
 
     --- Widget which is shown when user clicks on the ram widget
     local w = wibox {
-        height = 200,
+        height = 180,
         width = 400,
         ontop = true,
         expand = true,
@@ -30,11 +30,11 @@ local function worker(args)
     }
 
     w:setup {
-        border_width = 0,
+        border_width = 2,
         colors = {
-            '#5ea19d',
-            '#55918e',
-            '#4b817e',
+            '#BD93F9',
+            '#600F93',
+            '#800D90',
         },
         display_labels = false,
         forced_width = 25,
@@ -45,10 +45,10 @@ local function worker(args)
     local total, used, free, shared, buff_cache, available, total_swap, used_swap, free_swap
 
     local function getPercentage(value)
-        return math.floor(value / (total+total_swap) * 100 + 0.5) .. '%'
+        return value--math.floor(value / (total+total_swap) * 100 + 0.5) .. '%'
     end
 
-    watch('bash -c "LANGUAGE=en_US.UTF-8 free | grep -z Mem.*Swap.*"', 1,
+    watch('bash -c "LANGUAGE=en_US.UTF-8 free --mega | grep -z Mem.*Swap.*"', 1,
         function(widget, stdout, stderr, exitreason, exitcode)
             total, used, free, shared, buff_cache, available, total_swap, used_swap, free_swap =
                 stdout:match('(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*(%d+)%s*Swap:%s*(%d+)%s*(%d+)%s*(%d+)')
@@ -57,9 +57,9 @@ local function worker(args)
 
             if w.visible then
                 w.pie.data_list = {
-                    {'used ' .. getPercentage(used + used_swap), used + used_swap},
-                    {'free ' .. getPercentage(free + free_swap), free + free_swap},
-                    {'buff_cache ' .. getPercentage(buff_cache), buff_cache}
+                    {'used ' .. getPercentage(used + used_swap) .. ' MB', used + used_swap},
+                    {'free ' .. getPercentage(free + free_swap) .. ' MB', free + free_swap},
+                    {'buff_cache ' .. getPercentage(buff_cache) .. ' MB', buff_cache}
                 }
             end
         end,

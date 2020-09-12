@@ -11,22 +11,22 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Roboto Medium 8"
+theme.font          = "Roboto Medium 5"
 
-theme.bg_normal     = "#00337880"
+theme.bg_normal     = "#20212B"
 theme.bg_focus      = "#600F93"
 theme.bg_urgent     = "#FF5555"
 theme.bg_minimize   = "#424450"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#00AAA0"
-theme.fg_focus      = "#8BE9FD"
+theme.fg_normal     = "#BD93F9"
+theme.fg_focus      = "#50FA7B"
 theme.fg_urgent     = "#FF0000"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(1.5)
-theme.border_width  = dpi(1.5)
-theme.border_normal = "#6272A485"
+theme.border_width  = dpi(2)
+theme.border_normal = "#627AAA"
 theme.border_focus  = "#600F93"
 theme.border_marked = "#F1FA8C"
 
@@ -97,7 +97,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/Imagens/Space_11.jpg"
+theme.wallpaper = "~/Imagens/batman.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

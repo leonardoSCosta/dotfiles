@@ -30,14 +30,14 @@ local function worker(args)
             border = '#4C566A'
         },
         outrun = {
-            bg = '#0d0221',
+            bg = '#600F93',
             fg = '#D8DEE9',
-            focus_date_bg = '#650d89',
+            focus_date_bg = '#627AAA',
             focus_date_fg = '#2de6e2',
-            weekend_day_bg = '#261447',
+            weekend_day_bg = '#20212B',
             weekday_fg = '#2de6e2',
-            header_fg = '#f6019d',
-            border = '#261447'
+            header_fg = '#50FA7B',
+            border = '#BD93F9'
         },
         dark = {
             bg = '#000000',
@@ -177,7 +177,7 @@ local function worker(args)
         visible = false,
         shape = gears.shape.rounded_rect,
         offset = { y = 5 },
-        border_width = 1,
+        border_width = 2,
         border_color = calendar_themes[theme].border,
         widget = cal
     }
@@ -214,7 +214,7 @@ local function worker(args)
             if placement == 'top' then
                 awful.placement.top(popup, { margins = { top = 30 }, parent = awful.screen.focused() })
             elseif placement == 'top_right' then
-                awful.placement.top_right(popup, { margins = { top = 30, right = 10}, parent = awful.screen.focused() })
+                awful.placement.top_right(popup, { margins = { top = 30, right = 170}, parent = awful.screen.focused() })
             elseif placement == 'bottom_right' then
                 awful.placement.bottom_right(popup, { margins = { bottom = 30, right = 10}, parent = awful.screen.focused() })
             else

@@ -37,11 +37,13 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 editor = "vim"
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local brightness_widget = require("awesome-wm-widgets.brightnessarc-widget.brightnessarc")
 local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local net_widgets = require("net_widgets")
 local ram_widget  = require("awesome-wm-widgets.ram-widget.ram-widget")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -109,7 +111,7 @@ awful.layout.layouts = {
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
+   { "2anual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
@@ -136,7 +138,7 @@ end
 
 -- Adicionando um widget
 sep_widget = wibox.widget.textbox()
-sep_widget.text = " | "
+sep_widget.text = " |"
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -244,17 +246,39 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
+    --function custom_shape(cr, width, height)
+        --cr:move_to(0,0)
+        --cr:line_to(width,0)
+        --cr:line_to(width,height - height/4)
+        --cr:line_to(width - height/4,height)
+        --cr:line_to(0,height)
+        --cr:close_path()
+    --end
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     net_wireless = net_widgets.wireless({interface="wlp1s0"})
     net_wired = net_widgets.indicator()
-    --ram_widget.setup()
+
+    local cw = calendar_widget({
+        theme = 'outrun',
+        placement = 'top_right'
+    })
+
+
+    mytextclock:connect_signal("button::press", 
+        function(_, _, _, button)
+            if button == 1 then cw.toggle() end
+        end)
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
+            s.mylayoutbox,
             s.mytaglist,
+            sep_widget,
+            todo_widget({font = beautiful.font}),
             --s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
@@ -267,20 +291,17 @@ awful.screen.connect_for_each_screen(function(s)
             net_wired,
             net_wireless,
             sep_widget,
-            brightness_widget({font = beautiful.font}),
-            sep_widget,
-            cpu_widget(),
             ram_widget(),
+            cpu_widget(),
             sep_widget,
-            volumearc_widget(),
-            batteryarc_widget({
-                show_current_level = true,
-                arc_thickness = 2,
-            }),
-            sep_widget,
+            brightness_widget(),
+            volumearc_widget({height = 25}),
+            battery_widget({font= beautiful.font,
+                            show_current_level=true,
+                            display_notification=true}),
+            --sep_widget,
             --mykeyboardlayout,
             --wibox.widget.systray(),
-            s.mylayoutbox,
             --mylauncher,
         },
     }
@@ -570,7 +591,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false}
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -580,29 +601,29 @@ awful.rules.rules = {
 -- }}}
 
 -- Toggle titlebar on or off depending on s. Creates titlebar if it doesn't exist
-local function setTitlebar(client, s)
-    if s then
-        if client.titlebar == nil then
-            client:emit_signal("request::titlebars", "rules", {})
-        end
-        awful.titlebar.show(client)
-    else 
-        awful.titlebar.hide(client)
-    end
-end
--- Show titlebars on tags with the floating layout
-tag.connect_signal("property::layout", function(t)
-    -- New to Lua ? 
-    -- pairs iterates on the table and return a key value pair
-    -- I don't need the key here, so I put _ to ignore it
-    for _, c in pairs(t:clients()) do
-        if t.layout == awful.layout.suit.floating then
-            setTitlebar(c, true)
-        else
-            setTitlebar(c, false)
-        end
-    end
-end)
+--local function setTitlebar(client, s)
+    --if s then
+        --if client.titlebar == nil then
+            --client:emit_signal("request::titlebars", "rules", {})
+        --end
+        --awful.titlebar.show(client)
+    --else 
+        --awful.titlebar.hide(client)
+    --end
+--end
+---- Show titlebars on tags with the floating layout
+--tag.connect_signal("property::layout", function(t)
+    ---- New to Lua ? 
+    ---- pairs iterates on the table and return a key value pair
+    ---- I don't need the key here, so I put _ to ignore it
+    --for _, c in pairs(t:clients()) do
+        --if t.layout == awful.layout.suit.floating then
+            --setTitlebar(c, true)
+        --else
+            --setTitlebar(c, false)
+        --end
+    --end
+--end)
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
@@ -660,9 +681,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
-end)
+--client.connect_signal("mouse::enter", function(c)
+    --c:emit_signal("request::activate", "mouse_enter", {raise = false})
+--end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
