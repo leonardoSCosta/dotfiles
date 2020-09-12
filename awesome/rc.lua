@@ -216,7 +216,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     --awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    local names = { "Chat", "Spotify", "Brave", "4", "5", "6"}
+    local names = { " ", "阮 ", "爵 ", "4", "5", "6"}
     local l = awful.layout.suit
     local layouts = { l.tile.bottom, l.tile, l.floating, l.fair, l.max, l.floating}
     awful.tag(names, s, layouts)
@@ -246,15 +246,8 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    --function custom_shape(cr, width, height)
-        --cr:move_to(0,0)
-        --cr:line_to(width,0)
-        --cr:line_to(width,height - height/4)
-        --cr:line_to(width - height/4,height)
-        --cr:line_to(0,height)
-        --cr:close_path()
-    --end
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+
+    s.mywibox  = awful.wibar({ position = "top", screen = s})
 
     net_wireless = net_widgets.wireless({interface="wlp1s0"})
     net_wired = net_widgets.indicator()
@@ -271,22 +264,24 @@ awful.screen.connect_for_each_screen(function(s)
         end)
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
+    s.mywibox:setup{
+        expand="none",
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mylayoutbox,
             s.mytaglist,
-            sep_widget,
             todo_widget({font = beautiful.font}),
             --s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
+        {
+            layout = wibox.layout.fixed.horizontal,
+            spotify_widget({font = beautiful.font,
+                            show_tooltip=true}),
+        },
+        {-- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mytextclock,
-            sep_widget,
-            spotify_widget({font = beautiful.font}),
             sep_widget,
             net_wired,
             net_wireless,
@@ -299,10 +294,6 @@ awful.screen.connect_for_each_screen(function(s)
             battery_widget({font= beautiful.font,
                             show_current_level=true,
                             display_notification=true}),
-            --sep_widget,
-            --mykeyboardlayout,
-            --wibox.widget.systray(),
-            --mylauncher,
         },
     }
 end)

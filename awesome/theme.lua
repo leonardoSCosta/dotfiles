@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Roboto Medium 5"
+theme.font          = "RobotoMono Nerd Font Medium 6"
 
 theme.bg_normal     = "#20212B"
 theme.bg_focus      = "#600F93"
@@ -44,7 +44,7 @@ theme.border_marked = "#F1FA8C"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(3)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )
