@@ -20,6 +20,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
 "Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/colorizer'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Plugins para a barra de status
 Plug 'vim-airline/vim-airline'
@@ -66,9 +67,9 @@ nnoremap <C-p> :FZF<Enter>
 " Configura o plugin sneak
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
-"highlight Sneak ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
-"highlight SneakScope ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
-"highlight SneakLabel ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF 
+"highlight Sneak ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF
+"highlight SneakScope ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF
+"highlight SneakLabel ctermfg=255 ctermbg=20 guifg=20 guibg=#00C7DF
 
 " Configuração do airline
 let g:airline_theme='dracula'
@@ -84,11 +85,12 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" Fonte utilizada: RobotoMono Nerd Font Mono Medium 11
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.spell = '暈'
 let g:airline_symbols.branch = ''
+let g:airline#extensions#coc#warning_symbol = ''
+let g:airline#extensions#coc#error_symbol = '碌'
 
 set laststatus=2
 
@@ -105,10 +107,10 @@ endif
 
 " Customização do tema dracula
 if g:colors_name == 'dracula'
-    let g:dracula#palette.fg        = ['#FFFFFF',  61]
-    let g:dracula#palette.purple    = ['#855AF9', 141]
-    let g:dracula#palette.color_4   =  '#855AF9'
-endif  
+    "let g:dracula#palette.bg        = ['#282A36FC',  61]
+    "let g:dracula#palette.purple    = ['#855AF9', 141]
+    "let g:dracula#palette.color_4   =  '#855AF9'
+endif
 
 set termguicolors
 
@@ -124,7 +126,7 @@ let g:netrw_winsize = 25
 
 " Configura o plugin do LaTeX
 filetype plugin on
-filetype indent on 
+filetype indent on
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:livepreview_previewer = 'evince'

@@ -25,4 +25,4 @@ nnoremap Q gqap
 nnoremap <leader>w :w<CR>
 
 " Contar número de palavras no parágrafo
-nnoremap <leader>c vipg<C-g><Esc>
+nnoremap <leader>tc vipg<C-g><Esc>
