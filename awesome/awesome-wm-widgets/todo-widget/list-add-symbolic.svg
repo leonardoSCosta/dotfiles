@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -14,9 +12,9 @@
    height="16"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.48.1 r9760"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    version="1.0"
-   sodipodi:docname="list-add.svg"
+   sodipodi:docname="list-add-symbolic.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <defs
      id="defs4">
@@ -104,10 +102,11 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1028"
+     inkscape:window-height="1015"
      inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1">
+     inkscape:window-y="29"
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0">
     <sodipodi:guide
        orientation="1,0"
        position="0,112"
@@ -147,7 +146,7 @@
      inkscape:label="Cross"
      style="display:inline">
     <path
-       style="fill:#bebebe;fill-opacity:1;stroke:none"
+       style="fill:#bd93f9;fill-opacity:1;stroke:none"
        d="m 7.0372441,3 0,4.0117466 -4.0372441,0 0,1.9731062 4.0372441,0 0,4.0151472 1.9884029,0 0,-4.0151472 3.974353,0 0,-1.9731062 -3.974353,0 0,-4.0117466 z"
        id="Symbol"
        sodipodi:nodetypes="ccccccccccccc"

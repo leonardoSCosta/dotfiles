@@ -291,6 +291,7 @@ awful.screen.connect_for_each_screen(function(s)
                             icons = 'weather-underground-icons',
                             --icons_extension = '.svg', Para o tema VitalyGorbachev
                             time_format_12h = true,
+                            w_lang = 'pt_br',
                             coordinates = {-23.548670,-46.638248},
                             show_hourly_forecast = true,
                             show_daily_forecast = true,
