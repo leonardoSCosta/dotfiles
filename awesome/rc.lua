@@ -42,6 +42,7 @@ local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local brightness_widget = require("awesome-wm-widgets.brightnessarc-widget.brightnessarc")
 local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
+local volumebar_widget = require("awesome-wm-widgets.volumebar-widget.volumebar")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local net_widgets = require("net_widgets")
 local ram_widget  = require("awesome-wm-widgets.ram-widget.ram-widget")
@@ -115,7 +116,7 @@ awful.layout.layouts = {
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "2anual", terminal .. " -e man awesome" },
+   { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
@@ -222,7 +223,7 @@ awful.screen.connect_for_each_screen(function(s)
     --awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     local names = { " ", " ", " ", "", "", ""}
     local l = awful.layout.suit
-    local layouts = { l.tile.bottom, l.tile, l.floating, l.fair, l.max, l.floating}
+    local layouts = { l.tile.bottom, l.tile, l.tile, l.tile, l.tile, l.tile}
     awful.tag(names, s, layouts)
 
     -- Create a promptbox for each screen
@@ -251,7 +252,6 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Create the wibox
 
-    s.mywibox  = awful.wibar({ position = "top", screen = s})
 
     net_wireless = net_widgets.wireless({interface="wlp1s0"})
     net_wired = net_widgets.indicator()
@@ -267,6 +267,17 @@ awful.screen.connect_for_each_screen(function(s)
             if button == 1 then cw.toggle() end
         end)
 
+    --function custom_shape(cr, width, height)
+        --cr:move_to(0,0)
+        --cr:line_to(width,0)
+        --cr:line_to(width,height - height/4)
+        --cr:line_to(width - height/4,height)
+        --cr:line_to(0,height)
+        --cr:close_path()
+    --end
+    s.mywibox  = awful.wibar({position = "top", 
+                              screen = s})
+                              --shape = gears.shape.rounded_bar})
     -- Add widgets to the wibox
     s.mywibox:setup{
         expand="none",
@@ -304,7 +315,15 @@ awful.screen.connect_for_each_screen(function(s)
             cpu_widget(),
             sep_widget,
             brightness_widget(),
-            volumearc_widget({height = 25}),
+            --volumearc_widget({height = 25}),
+            volumebar_widget({
+                main_color = '#BD93F9',
+                --mute_color = '#ff0000',
+                width = 80,
+                shape = 'rounded_bar', -- octogon, hexagon, powerline, etc
+                -- bar's height = wibar's height minus 2x margins
+                margins = 12
+            }),
             battery_widget({font= beautiful.font,
                             show_current_level=true,
                             display_notification=true}),
@@ -469,14 +488,20 @@ clientkeys = gears.table.join(
     awful.key({ modkey         }, ";", 
         function () 
             awful.spawn("light -A 5") 
-        end, 
+        end,
         {description = "increase brightness", group = "custom"}),
 
     awful.key({ modkey, "Shift"}, ";", 
         function () 
             awful.spawn("light -U 5") 
         end, 
-        {description = "decrease brightness", group = "custom"})
+        {description = "decrease brightness", group = "custom"}),
+        
+    awful.key({ modkey, "Shift"}, "g", 
+        function () 
+            awful.spawn("gsettings reset org.gnome.ControlCenter last-panel") 
+        end, 
+        {description = "Reset Gnome Controller", group = "custom"})
 )
 
 -- Bind all key numbers to tags.
@@ -599,9 +624,9 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false}
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
+    -- Set Firefox to always map on the tag
      { rule = { class = "Firefox" },
-       properties = { screen = 1, tag = "Brave" } },
+       properties = { screen = 1, tag = " "} },
 }
 -- }}}
 
