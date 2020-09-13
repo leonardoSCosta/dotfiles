@@ -183,8 +183,8 @@ local function worker(args)
                 {
                     id = 'icon',
                     resize = true,
-                    forced_width = 128,
-                    forced_height = 128,
+                    forced_width = 100,
+                    forced_height = 100,
                     widget = wibox.widget.imagebox
                 },
                 align = 'center',
@@ -192,7 +192,7 @@ local function worker(args)
             },
             {
                 id = 'description',
-                font = font_name .. ' 10',
+                font = font_name .. '6',
                 align = 'center',
                 widget = wibox.widget.textbox
             },
@@ -203,13 +203,13 @@ local function worker(args)
             {
                 {
                     id = 'temp',
-                    font = font_name .. ' 36',
+                    font = font_name .. '15',
                     widget = wibox.widget.textbox
                 },
                 {
                     id = 'feels_like_temp',
                     align = 'center',
-                    font = font_name .. ' 9',
+                    font = font_name .. ' 7',
                     widget = wibox.widget.textbox
                 },
                 layout = wibox.layout.fixed.vertical
@@ -217,17 +217,17 @@ local function worker(args)
             {
                 {
                     id = 'wind',
-                    font = font_name .. ' 9',
+                    font = font_name .. ' 6',
                     widget = wibox.widget.textbox
                 },
                 {
                     id = 'humidity',
-                    font = font_name .. ' 9',
+                    font = font_name .. ' 6',
                     widget = wibox.widget.textbox
                 },
                 {
                     id = 'uv',
-                    font = font_name .. ' 9',
+                    font = font_name .. ' 7',
                     widget = wibox.widget.textbox
                 },
                 expand = 'inside',
@@ -242,10 +242,10 @@ local function worker(args)
         update = function(self, weather)
             self:get_children_by_id('icon')[1]:set_image(WIDGET_DIR .. '/icons/' .. icon_pack_name .. '/' .. icon_map[weather.weather[1].icon] .. icons_extension)
             self:get_children_by_id('temp')[1]:set_text(gen_temperature_str(weather.temp, '%.0f', false, units))
-            self:get_children_by_id('feels_like_temp')[1]:set_text('Feels like ' .. gen_temperature_str(weather.feels_like, '%.0f', false, units))
+            self:get_children_by_id('feels_like_temp')[1]:set_text('Sensação ' .. gen_temperature_str(weather.feels_like, '%.0f', false, units))
             self:get_children_by_id('description')[1]:set_text(weather.weather[1].description)
-            self:get_children_by_id('wind')[1]:set_markup('Wind: <b>' .. weather.wind_speed .. 'm/s (' .. to_direction(weather.wind_deg) .. ')</b>')
-            self:get_children_by_id('humidity')[1]:set_markup('Humidity: <b>' .. weather.humidity .. '%</b>')
+            self:get_children_by_id('wind')[1]:set_markup('Vento: <b>' .. weather.wind_speed .. 'm/s (' .. to_direction(weather.wind_deg) .. ')</b>')
+            self:get_children_by_id('humidity')[1]:set_markup('Humidade: <b>' .. weather.humidity .. '%</b>')
             self:get_children_by_id('uv')[1]:set_markup('UV: ' .. uvi_index_color(weather.uvi))
         end
     }
@@ -263,7 +263,7 @@ local function worker(args)
                     {
                         text = os.date('%a', tonumber(day.dt) + tonumber(timezone_offset)),
                         align = 'center',
-                        font = font_name .. ' 9',
+                        font = font_name .. ' 7',
                         widget = wibox.widget.textbox
                     },
                     {
@@ -271,8 +271,8 @@ local function worker(args)
                             {
                                 image = WIDGET_DIR .. '/icons/' .. icon_pack_name .. '/' .. icon_map[day.weather[1].icon] .. icons_extension,
                                 resize = true,
-                                forced_width = 48,
-                                forced_height = 48,
+                                forced_width = 36,
+                                forced_height = 36,
                                 widget = wibox.widget.imagebox
                             },
                             align = 'center',
@@ -280,9 +280,9 @@ local function worker(args)
                         },
                         {
                             text = day.weather[1].description,
-                            font = font_name .. ' 8',
+                            font = font_name .. ' 5',
                             align = 'center',
-                            forced_height = 50,
+                            forced_height = 40,
                             widget = wibox.widget.textbox
                         },
                         layout = wibox.layout.fixed.vertical
@@ -291,13 +291,13 @@ local function worker(args)
                         {
                             text = gen_temperature_str(day.temp.day, '%.0f', false, units),
                             align = 'center',
-                            font = font_name .. ' 9',
+                            font = font_name .. ' 7',
                             widget = wibox.widget.textbox
                         },
                         {
                             text = gen_temperature_str(day.temp.night, '%.0f', false, units),
                             align = 'center',
-                            font = font_name .. ' 9',
+                            font = font_name .. ' 7',
                             widget = wibox.widget.textbox
                         },
                         layout = wibox.layout.fixed.vertical
@@ -350,13 +350,13 @@ local function worker(args)
                     table.insert(hours_below, wibox.widget {
                         text = os.date(time_format_12h and '%I%p' or '%H:00', tonumber(hour.dt)),
                         align = 'center',
-                        font = font_name .. ' 9',
+                        font = font_name .. ' 7',
                         widget = wibox.widget.textbox
                     })
                     table.insert(temp_below, wibox.widget {
                         markup = '<span foreground="#2E3440">' .. string.format('%.0f', hour.temp) .. '°' .. '</span>',
                         align = 'center',
-                        font = font_name .. ' 9',
+                        font = font_name .. ' 7',
                         widget = wibox.widget.textbox
                     })
                 end

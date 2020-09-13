@@ -2,6 +2,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+-- Seta o idioma para PT-BR
+os.setlocale('pt_BR.UTF8')
+
 -- Override awesome.quit when we're using GNOME
 _awesome_quit = awesome.quit
 awesome.quit = function()
@@ -44,6 +47,7 @@ local net_widgets = require("net_widgets")
 local ram_widget  = require("awesome-wm-widgets.ram-widget.ram-widget")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -282,6 +286,15 @@ awful.screen.connect_for_each_screen(function(s)
         {-- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mytextclock,
+            -- Coordenadas para SP - BR
+            weather_widget({api_key='85e2bc6bf003096c495673c7448e3699',
+                            icons = 'weather-underground-icons',
+                            --icons_extension = '.svg', Para o tema VitalyGorbachev
+                            time_format_12h = true,
+                            coordinates = {-23.548670,-46.638248},
+                            show_hourly_forecast = true,
+                            show_daily_forecast = true,
+                            font_name = beautiful.font.name}),
             sep_widget,
             net_wired,
             net_wireless,
