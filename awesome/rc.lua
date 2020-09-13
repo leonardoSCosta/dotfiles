@@ -220,7 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     --awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    local names = { " ", "阮 ", "爵 ", "4", "5", "6"}
+    local names = { " ", " ", " ", "", "", ""}
     local l = awful.layout.suit
     local layouts = { l.tile.bottom, l.tile, l.floating, l.fair, l.max, l.floating}
     awful.tag(names, s, layouts)
