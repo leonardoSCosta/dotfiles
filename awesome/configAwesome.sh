@@ -8,8 +8,8 @@ git clone https://gitlab.com/leo_costa/my-vim-config
 sudo apt install -y awesome awesome-extra
 
 # Agora vamos baixar o rep com os widgets para o awesome
-cd ~/.config/awesome
-git clone https://github.com/streetturtle/awesome-wm-widgetshttps://github.com/streetturtle/awesome-wm-widgets
+#cd ~/.config/awesome
+#git clone https://github.com/streetturtle/awesome-wm-widgetshttps://github.com/streetturtle/awesome-wm-widgets
 
 # Widget do spotify
 # Vamos instalar o pacote de ícones necessário para o widget do spotify
@@ -39,7 +39,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 sudo apt install -y light
 
 # Widget de internet
-git clone -y https://github.com/pltanton/net_widgets.git ~/.config/awesome/net_widgets
+#git clone -y https://github.com/pltanton/net_widgets.git ~/.config/awesome/net_widgets
 
 # Para mudar o tema do Gtk
 sudo apt install -y lxappearance
