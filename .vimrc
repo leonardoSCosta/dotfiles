@@ -6,9 +6,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-"if empty(glob('~/.config/nvim'))
-    "silent !mkdir ~/.config/nvim; touch ~/.config/nvim/init.vim
-"endif
+if empty(glob('~/.config/nvim'))
+    silent !mkdir ~/.config/nvim; touch ~/.config/nvim/init.vim
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -107,7 +107,7 @@ endif
 
 " Customização do tema dracula
 if g:colors_name == 'dracula'
-    "let g:dracula#palette.bg        = ['#282A36FC',  61]
+    "let g:dracula#palette.bg        = ['#282A36FF',  61]
     "let g:dracula#palette.purple    = ['#855AF9', 141]
     "let g:dracula#palette.color_4   =  '#855AF9'
 endif
@@ -130,13 +130,16 @@ filetype indent on
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:livepreview_previewer = 'evince'
+let g:Tex_CustomTemplateDirectory = '~/.config/nvim/plug-config/TemplatesLatex/,~/.vim/plugged/vim-latex/ftplugin/latex-suite/templates/'
 let g:Tex_FoldedSections=""
 let g:Tex_FoldedEnvironments=""
 let g:Tex_FoldedMusic=""
 let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_AdvancedMath = 1
+let g:Tex_UseMakefile = 0
 " Mudar para 'biber' caso for compilar utilizando ele
-let g:Tex_BibtexFlavor = 'bibtex'
+let g:Tex_BibtexFlavor = 'biber'
+"let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
 

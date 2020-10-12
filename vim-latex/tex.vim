@@ -7,3 +7,4 @@ set iskeyword+=:
 call IMAP('refF', '\ref{fig:<++>}<++>', 'tex')
 call IMAP('refT', '\ref{tab:<++>}<++>', 'tex')
 call IMAP('refQ', '\eqref{eq:<++>}<++>', 'tex')
+call IMAP('TCT', '\textcite{<++>}<++>', 'tex')

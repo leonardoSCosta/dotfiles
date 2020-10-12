@@ -1,0 +1,92 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+\documentclass[a4paper]{article}
+\usepackage[inner=2.0cm,outer=2.0cm,top=1.5cm,bottom=2.0cm]{geometry}
+\usepackage{setspace}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\usepackage[rgb]{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  frame=shadowbox,
+  literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{\c{c}}1 {í}{\i}1 {ê}{\^e}1
+  {ú}{\'u}1,
+}
+
+
+\newcommand{\homework}[9]{
+\pagestyle{myheadings}
+\thispagestyle{plain}
+\newpage
+\setcounter{page}{1}
+\noindent
+\begin{center}
+\framebox{
+\vbox{\vspace{2mm}
+\hbox to 6.28in { {\bf EL 9420 Laboratório de Controle Avançado \hfill Turma: 635 \hfill {\small (#2)}} }
+\vspace{6mm}
+\hbox to 6.28in { {\large \hfill #1  \hfill} }
+\vspace{6mm}
+\hbox to 6.28in { {\it Professor: {\rm #3}} \hfill Nome: {\rm  #4}, RA: {\rm #5} }
+\vspace{2mm}
+\hbox to 6.28in { \hfill {\rm  #6}, RA: {\rm #7} }
+\vspace{2mm}
+\hbox to 6.28in { \hfill {\rm  #8}, RA: {\rm #9} }
+}
+}
+\end{center}
+\markboth{#1}{#1}
+\vspace*{4mm}
+}
+
+\hypersetup{
+pdfauthor={Leonardo Costa},
+pdftitle={},
+pdfkeywords={},
+pdfcreator={PDFLaTeX},
+pdfproducer={PDFLaTeX},
+}
+
+\begin{document}
+\homework{Experiência \#<++> <++>}{Data: <++>}
+{<++>} %% Professor
+{Leonardo da Silva Costa}{11.216.091--6}
+{<++>}{<++>} %% Segundo integrante
+{<++>}{<++>} %% Terceiro integrante
+
+<++>
+
+\end{document}
