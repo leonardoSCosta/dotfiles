@@ -45,6 +45,9 @@ Plug 'preservim/nerdcommenter'
 " Outros
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+" <leader> hp/hu/hs para visualizar/desfazer/salvar as modificações
+" :GitGutterEnable/Disable para habilitar/desabilitar
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
@@ -93,6 +96,7 @@ let g:airline#extensions#coc#warning_symbol = ''
 let g:airline#extensions#coc#error_symbol = '碌'
 
 set laststatus=2
+set hlsearch
 
 " Configuração do esquema de cores
 set background=dark
@@ -107,7 +111,7 @@ endif
 
 " Customização do tema dracula
 if g:colors_name == 'dracula'
-    "let g:dracula#palette.bg        = ['#282A36FF',  61]
+    "let g:dracula#palette.bg        = ['#282A36FA',  61]
     "let g:dracula#palette.purple    = ['#855AF9', 141]
     "let g:dracula#palette.color_4   =  '#855AF9'
 endif
@@ -142,10 +146,3 @@ let g:Tex_BibtexFlavor = 'biber'
 "let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
-
-" Configura o YouCompleteMe
-"let g:ycm_use_clangd = 0
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-"let g:ycm_add_preview_to_completeopt = 1
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1

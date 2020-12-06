@@ -5,7 +5,7 @@ mkdir ~/.config/nvim
 
 git clone https://gitlab.com/leo_costa/my-vim-config
 
-sudo apt install -y awesome awesome-extra
+#sudo apt install -y awesome awesome-extra
 
 # Agora vamos baixar o rep com os widgets para o awesome
 #cd ~/.config/awesome
@@ -18,11 +18,11 @@ git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-t
 sudo make install
 
 # Agora vamos instalar o spotifi-CLI
-cd
-git clone -y https://gist.github.com/fa6258f3ff7b17747ee3.git
-cd ./fa6258f3ff7b17747ee3 
-chmod +x sp
-sudo cp ./sp /usr/local/bin/
+#cd
+#git clone -y https://gist.github.com/fa6258f3ff7b17747ee3.git
+#cd ./fa6258f3ff7b17747ee3 
+#chmod +x sp
+#sudo cp ./sp /usr/local/bin/
 
 # Vamos instalar o spotify também
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add
@@ -36,16 +36,16 @@ sudo apt-get update && sudo apt-get install spotify-client
 # Este comando deve ser colocado no widget de brilho do monitor
 #sudo apt install -y brightnessctl
 
-sudo apt install -y light
+#sudo apt install -y light
 
 # Widget de internet
 #git clone -y https://github.com/pltanton/net_widgets.git ~/.config/awesome/net_widgets
 
 # Para mudar o tema do Gtk
-sudo apt install -y lxappearance
+#sudo apt install -y lxappearance
 
 # Para ativar a transparência das janelas
-sudo apt install -y compton
+#sudo apt install -y compton
 
 # Para que o compton seja executado ao inicar devemos editar o arquivo
 # /etc/X11/xinit/xinitrc e adiconar as seguintes linhas no inicio do arquivo
@@ -53,8 +53,9 @@ sudo apt install -y compton
 #[ -f /etc/xprofile ] && source /etc/xprofile
 #[ -f ~/.xprofile ] && source ~/.xprofile
 
-echo compton -b > $HOME/.xprofile
-echo xrandr -s 1680x1050 >> $HOME/.xprofile
+#echo compton -b > $HOME/.xprofile
+#echo xrandr -s 1680x1050 >> $HOME/.xprofile
+
 # Agora adicione o seguinte comando no arquivo .xprofile 
 # compton -b
 
@@ -76,4 +77,10 @@ gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 
 # Seta o layout do teclado
-setxkbmap -v -layout us -variant intl
+#setxkbmap -v -layout us -variant intl
+
+# Instalando o starship
+curl -fsSL https://starship.rs/install.sh | bash
+
+echo "Adicionar: eval '$(starship init bash)' no bash.rc (mudar para aspas duplas)"
+mv ../starship.toml $HOME/.config/
