@@ -3,14 +3,14 @@ add_newline = false
 
 [cmd_duration]
 min_time = 500
-format = "underwent [$duration](bold yellow)"
+format = "took [$duration](bold yellow)"
 
 [directory]
 truncation_length = 8
-truncation_symbol = "…/"
+truncation_symbol = " …/"
 
 [git_branch]
-symbol = "🌱 "
+symbol = " "
 truncation_length = 20
 truncation_symbol = ""
 
@@ -19,26 +19,25 @@ commit_hash_length = 4
 tag_symbol = "🔖 "
 
 [git_status]
-conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
-untracked = "🤷‍"
-stashed = "📦"
-modified = "📝"
-staged = '[++\($count\)](green)'
-renamed = "👅"
+conflicted = "🏳  "
+ahead = " "
+behind = ""
+diverged = "ﲅ "
+untracked = ""
+stashed = " "
+modified = " פֿ "
+staged = ' [++\($count\)](green)'
+renamed = "﨣"
 deleted = "🗑"
 
 [memory_usage]
 disabled = true
 threshold = -1
-symbol = " "
 style = "bold dimmed green"
 
 [username]
 style_user = "green bold"
 style_root = "black bold"
-format = "[$user]($style) "
+format = " [$user]($style)"
 disabled = false
 show_always = true

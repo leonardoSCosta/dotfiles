@@ -1,5 +1,5 @@
 #!/bin/sh
-#sudo apt install -y build-essential git awesome awesome-extra neovim nodejs luarocks autoconf 
+sudo apt install -y build-essential git neovim nodejs luarocks autoconf 
 mkdir ~/.config/nvim
 
 
