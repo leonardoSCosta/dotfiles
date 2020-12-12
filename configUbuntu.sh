@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt install -y build-essential git neovim nodejs luarocks autoconf 
+sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep
 mkdir ~/.config/nvim
 
 git clone https://gitlab.com/leo_costa/my-vim-config
@@ -37,4 +37,5 @@ gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 curl -fsSL https://starship.rs/install.sh | bash
 
 echo "Adicionar: --eval '$(starship init bash)'-- no bash.rc (mudar para aspas duplas)"
+mkdir -p ~/.config && touch ~/.config/starship.toml
 mv starship.toml $HOME/.config/

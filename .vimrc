@@ -42,16 +42,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
 
-" Outros
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
+" Git
 Plug 'airblade/vim-gitgutter'
 " <leader> hp/hu/hs para visualizar/desfazer/salvar as modificações
 " :GitGutterEnable/Disable para habilitar/desabilitar
+
+" Outros
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
-"Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'mbbill/undotree'
 
 call plug#end()
@@ -91,8 +92,8 @@ endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.spell = '暈'
-let g:airline_symbols.branch = ''
-let g:airline#extensions#coc#warning_symbol = ''
+let g:airline_symbols.branch = ' '
+let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#coc#error_symbol = '碌'
 
 set laststatus=2

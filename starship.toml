@@ -1,18 +1,22 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
 [cmd_duration]
 min_time = 500
 format = "took [$duration](bold yellow)"
 
 [directory]
-truncation_length = 8
+truncation_length = 2
 truncation_symbol = " …/"
+read_only = " |🔒 "
 
 [git_branch]
 symbol = " "
 truncation_length = 20
-truncation_symbol = ""
+truncation_symbol = "…"
 
 [git_commit]
 commit_hash_length = 4
@@ -27,17 +31,35 @@ untracked = ""
 stashed = " "
 modified = " פֿ "
 staged = ' [++\($count\)](green)'
-renamed = "﨣"
+renamed = " 﨣"
 deleted = "🗑"
 
 [memory_usage]
-disabled = true
+disabled = false
 threshold = -1
-style = "bold dimmed green"
+symbol = ""
+style = "purple"
+format = "[${ram}]($style) "
 
 [username]
 style_user = "green bold"
 style_root = "black bold"
-format = " [$user]($style)"
+format = " [$user]($style) "
 disabled = false
 show_always = true
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]  # "bold green" style when capacity is between 30% and 95%
+threshold = 95
+style = "bold green"
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
