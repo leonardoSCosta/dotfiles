@@ -1,14 +1,14 @@
 " Muda a leader key para ' '
 let g:mapleader = " "
 
-syntax enable              " Enables syntax highlighing
+syntax enable              " Enables syntax highlighting
 
 set noerrorbells
 
 set hidden                 " Required to keep multiple buffers open multiple buffers
 set nowrap                 " Display long lines as just one line
 set encoding=utf-8         " The encoding displayed
-set pumheight=10           " Makes popup menu smaller
+set pumheight=10           " Makes pop-up menu smaller
 set fileencoding=utf-8     " The encoding written to file
 set ruler              	   " Show the cursor position all the time
 set iskeyword+=-           " treat dash separated words as a word text object"
@@ -48,8 +48,12 @@ set undodir=~/.vim/undodir
 set undofile
 
 set updatetime=300         " Faster completion
-set timeoutlen=300         " By default timeoutlen is 1000 ms
-set formatoptions-=cro     " Stop newline continution of comments
-set clipboard=unnamedplus  " Copy paste between vim and everything else
+set timeoutlen=300         " By default timeout Len is 1000 ms
+set formatoptions-=cro     " Stop newline continuation of comments
+set clipboard=unnamedplus  " Copy paste between Vim and everything else
+
+setlocal spell
+set spelllang=pt,en
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

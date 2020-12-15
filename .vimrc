@@ -134,7 +134,7 @@ filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
-let g:livepreview_previewer = 'evince'
+let g:livepreview_previewer = 'zathura'
 let g:Tex_CustomTemplateDirectory = '~/.config/nvim/plug-config/TemplatesLatex/,~/.vim/plugged/vim-latex/ftplugin/latex-suite/templates/'
 let g:Tex_FoldedSections=""
 let g:Tex_FoldedEnvironments=""
@@ -143,7 +143,7 @@ let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_AdvancedMath = 1
 let g:Tex_UseMakefile = 0
 " Mudar para 'biber' caso for compilar utilizando ele
-let g:Tex_BibtexFlavor = 'biber'
-"let g:Tex_BibtexFlavor = 'bibtex'
+"let g:Tex_BibtexFlavor = 'biber'
+let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
