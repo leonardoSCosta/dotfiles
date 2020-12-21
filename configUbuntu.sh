@@ -74,6 +74,19 @@ echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
 
+# Fisher plugin manager
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+# Dracula theme para fish
+fisher install dracula/fish
+
+# Instala shell colors
+git clone https://gitlab.com/dwt1/shell-color-scripts.git
+cd shell-color-scripts
+rm -rf /opt/shell-color-scripts
+sudo mkdir -p /opt/shell-color-scripts/colorscripts
+sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
+sudo cp colorscript.sh /usr/bin/colorscript
+
 # Setar alacritty como terminal padrão
 #sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
 #sudo update-alternatives --config x-terminal-emulator
