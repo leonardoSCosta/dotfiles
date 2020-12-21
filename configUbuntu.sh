@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep sxiv
+sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep sxiv fish
 mkdir ~/.config/nvim
 
 git clone https://gitlab.com/leo_costa/my-vim-config
@@ -69,6 +69,10 @@ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz 
 mkdir -p ~/.bash_completion
 cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
 echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
+
+# Deixa o fish como shell padrão
+echo /usr/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/bin/fish
 
 # Setar alacritty como terminal padrão
 #sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
