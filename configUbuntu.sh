@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep
+sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep sxiv
 mkdir ~/.config/nvim
 
 git clone https://gitlab.com/leo_costa/my-vim-config
