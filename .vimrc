@@ -147,3 +147,6 @@ let g:Tex_UseMakefile = 0
 let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
+
+autocmd FileType c inoremap {{ <Enter>{<Enter>}
+autocmd FileType cpp inoremap {{ <Enter>{<Enter>}<Esc>O

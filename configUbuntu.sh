@@ -36,7 +36,10 @@ gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 # Instalando o starship
 curl -fsSL https://starship.rs/install.sh | bash
 
-echo "Adicionar: --eval '$(starship init bash)'-- no bash.rc (mudar para aspas duplas)"
+# Configurando ele no bash
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+
+# Copiando as configs
 mkdir -p ~/.config && touch ~/.config/starship.toml
 mv starship.toml $HOME/.config/
 

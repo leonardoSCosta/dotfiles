@@ -9,3 +9,4 @@ cp -rf $HOME/.config/starship.toml $PWD/
 cp -rf $HOME/.bash_aliases $PWD/
 cp -rf $HOME/Imagens/Papéis\ de\ parede/* $PWD/Wallpapers
 cp -rf $HOME/.config/alacritty $PWD/
+cp -rf $HOME/.config/fish/config.fish $PWD/fish/
