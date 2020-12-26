@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep sxiv fish curl
+sudo apt install -y build-essential git neovim nodejs luarocks autoconf ripgrep sxiv fish curl flameshot zathura texlive-full
 mkdir ~/.config/nvim
 
 # git clone https://gitlab.com/leo_costa/my-vim-config
@@ -10,9 +10,9 @@ git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-t
 sudo make install
 
 # Vamos instalar o spotify também
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client
+#curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add
+#echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+#sudo apt-get update && sudo apt-get install spotify-client
 
 # Instalar estas fontes(baixar e colocar na pasta ~/.fonts e rodar o comando fc-cache -v
 
@@ -41,7 +41,13 @@ echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # Copiando as configs
 mkdir -p ~/.config && touch ~/.config/starship.toml
+cd; cd my-vim-config
 mv starship.toml $HOME/.config/
+
+cp fish/config.fish ~/.config/fish/
+
+cp ./.vimrc ~/
+cp -rf ./Wallpapers ~/Imagens/
 
 # Instalar o alacritty
 #cd
