@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
-    sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm
+    sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake
 mkdir ~/.config/nvim
 
 # git clone https://gitlab.com/leo_costa/my-vim-config
