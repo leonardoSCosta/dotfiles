@@ -6,4 +6,4 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 
-hi! Normal ctermbg=NONE guibg=NONE
+highlight Normal guibg=NONE

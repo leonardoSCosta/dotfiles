@@ -31,29 +31,36 @@ set ignorecase
 set smartindent            " Makes indenting smart
 set autoindent             " Good auto indent
 
-set noswapfile
 
 set incsearch
 set nohlsearch
 
-set rnu " Ativa a numeração relativa das linhas
+set relativenumber " Ativa a numeração relativa das linhas
 set nu  " Ativa a numeração das linhas
 
 set noshowmode             " We don't need to see things like -- INSERT -- anymore
 
+set noswapfile
 set nobackup               " This is recommended by coc
 set nowritebackup          " This is recommended by coc
-
 set undodir=~/.vim/undodir
 set undofile
 
-set updatetime=300         " Faster completion
-set timeoutlen=300         " By default timeout Len is 1000 ms
+set scrolloff=8
+
+set colorcolumn=80 " Configura a  coluna limite em 80 caracteres
+set signcolumn=yes
+
+set updatetime=50         " Faster completion
+set timeoutlen=1000         " By default timeout Len is 1000 ms
 set formatoptions-=cro     " Stop newline continuation of comments
 set clipboard=unnamedplus  " Copy paste between Vim and everything else
 
-setlocal spell
-set spelllang=pt,en
+autocmd FileType tex setlocal spell
+autocmd FileType tex set spelllang=pt,en
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+autocmd FileType c inoremap {{ <Enter>{<Enter>}<Esc>O
+autocmd FileType cpp inoremap {{ <Enter>{<Enter>}<Esc>O
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
