@@ -46,7 +46,7 @@ set nowritebackup          " This is recommended by coc
 set undodir=~/.vim/undodir
 set undofile
 
-set scrolloff=8
+"set scrolloff=8
 
 set colorcolumn=80 " Configura a  coluna limite em 80 caracteres
 set signcolumn=yes
@@ -64,3 +64,14 @@ autocmd FileType c inoremap {{ <Enter>{<Enter>}<Esc>O
 autocmd FileType cpp inoremap {{ <Enter>{<Enter>}<Esc>O
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup LEONARDO
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END

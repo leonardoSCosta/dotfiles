@@ -1,6 +1,7 @@
 " Extensoes utilizadas:
 " coc-python coc-clangd coc-vimlsp coc-java coc-markdownlint coc-texlab
-" coc-json coc-tsserver coc-snippets coc-explorer coc-lua
+" coc-json coc-tsserver coc-snippets coc-explorer coc-lua coc-marketplace
+" coc-fish
 
 " TextEdit might fail if hidden is not set.
 set hidden
