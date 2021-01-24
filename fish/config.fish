@@ -34,3 +34,12 @@ end
 function track_enable
     xinput set-prop 16 "Device Enabled" $argv
 end
+
+function compressPDF
+    if count $argv > /dev/null
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+        -dNOPAUSE -dQUIET -dBATCH -sOutputFile=Output.pdf $argv
+    else
+        echo "Insira o arquivo para ser comprimido!"
+    end
+end
