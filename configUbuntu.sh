@@ -2,8 +2,11 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find
+    clang clangd fd-find cargo
 mkdir ~/.config/nvim
+
+cargo install exa
+cp ~/.cargo/bin/exa ~/.local/bin/
 
 # git clone https://gitlab.com/leo_costa/my-vim-config
 

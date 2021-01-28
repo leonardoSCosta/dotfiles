@@ -14,6 +14,11 @@ alias stmide=~/st/stm32cubeide_1.5.0/stm32cubeide
 alias stmmx=~/STM32CubeMX/STM32CubeMX
 alias pip=pip3
 alias matlab=~/MATLAB/R2020b/bin/matlab
+alias fd=fdfind
+
+function ls
+    exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
+end
 
 function fish_greeting
     colorscript -r
