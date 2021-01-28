@@ -105,3 +105,5 @@ sudo cp colorscript.sh /usr/bin/colorscript
 # Setar alacritty como terminal padrão
 #sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
 #sudo update-alternatives --config x-terminal-emulator
+
+sudo usermod -a -G dialout $USER
