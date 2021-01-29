@@ -107,3 +107,9 @@ sudo cp colorscript.sh /usr/bin/colorscript
 #sudo update-alternatives --config x-terminal-emulator
 
 sudo adduser $USER dialout
+
+# Evitar popping sound
+# Adicionar a linha
+options snd-hda-intel power_save=0 power_save_controller=N
+# no arquivo
+/etc/modprobe.d/alsa-base.conf
