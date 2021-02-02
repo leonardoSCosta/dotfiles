@@ -20,6 +20,14 @@ function ls
     exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
 end
 
+function cheat
+    if count $argv > /dev/null
+        curl cht.sh/$argv
+    else
+        echo "Insira {lang}/{command}"
+    end
+end
+
 function fish_greeting
     colorscript -r
 end
