@@ -2,7 +2,7 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find cargo asciidoctor
+    clang clangd fd-find cargo asciidoctor neofetch
 
 gem install asciidoctor-pdf
 mkdir ~/.config/nvim
