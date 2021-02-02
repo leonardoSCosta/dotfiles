@@ -37,6 +37,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'vim-latex/vim-latex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
+" Asciidoctor
+Plug 'habamax/vim-asciidoctor'
+
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

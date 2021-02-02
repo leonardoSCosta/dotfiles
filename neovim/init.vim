@@ -6,5 +6,6 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/nerdcommenter.vim
+source $HOME/.config/nvim/plug-config/asciidoctor.vim
 
 highlight Normal guibg=NONE

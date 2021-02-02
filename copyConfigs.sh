@@ -9,6 +9,6 @@ cp -rf $HOME/.config/starship.toml $PWD/
 cp -rf $HOME/.bash_aliases $PWD/
 cp -rf $HOME/Imagens/Wallpapers/* $PWD/Wallpapers
 #cp -rf $HOME/.config/alacritty $PWD/
-cp -rf $HOME/.config/fish/config.fish $PWD/fish/
+# cp -rf $HOME/.config/fish/config.fish $PWD/fish/
 cp -rf $HOME/.gitconfig $PWD/
 cp -rf $HOME/.vim/plugin/ $PWD
