@@ -20,6 +20,10 @@ function ls
     exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
 end
 
+function readSerial
+    ~/Tools/./serialReaderCLI --port-name ttyUSB0 --port-baud 115200 --log-dir ~/SGRIDD/seriallogs/ $argv
+end
+
 function cheat
     if count $argv > /dev/null
         curl cht.sh/$argv
