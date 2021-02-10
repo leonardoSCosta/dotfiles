@@ -42,6 +42,7 @@ Plug 'habamax/vim-asciidoctor'
 
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
