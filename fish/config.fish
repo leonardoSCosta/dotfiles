@@ -16,12 +16,24 @@ alias pip=pip3
 alias matlab=~/MATLAB/R2020b/bin/matlab
 alias fd=fdfind
 
+function move_date
+    mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
+end
+
+function compile_C
+    gcc $argv.c -o $argv; ./$argv
+end
+
 function ls
     exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
 end
 
 function clc
     clear
+end
+
+function shut_reason
+    cat /var/log/kern.log | rg shutting
 end
 
 function readSerial

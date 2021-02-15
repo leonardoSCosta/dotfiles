@@ -4,6 +4,9 @@ sudo apt install -y \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
     clang clangd fd-find cargo asciidoctor neofetch
 
+sudo snap install shotcut --classic
+sudo snap install mailspring
+
 gem install asciidoctor-pdf
 mkdir ~/.config/nvim
 
