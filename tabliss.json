@@ -1,0 +1,171 @@
+{
+    "backgrounds": [
+        {
+            "active": true,
+            "display": {
+                "blur": 0,
+                "luminosity": 0
+            },
+            "id": "8c0a97ef-4832-43a3-adc7-4617f83f93fd",
+            "key": "background/gradient"
+        }
+    ],
+    "widgets": [
+        {
+            "active": true,
+            "display": {
+                "fontFamily": "",
+                "fontSize": 24,
+                "position": "topCentre"
+            },
+            "id": "e2d8a577-0880-470c-b88e-dc22c38c2576",
+            "key": "widget/time"
+        },
+        {
+            "active": true,
+            "display": {
+                "fontSize": 28,
+                "position": "middleCentre"
+            },
+            "id": "5b79a705-a4d3-4729-a241-810f0973bbd1",
+            "key": "widget/search"
+        },
+        {
+            "active": true,
+            "display": {
+                "fontFamily": "",
+                "fontSize": 40,
+                "fontWeight": 700,
+                "position": "topRight"
+            },
+            "id": "103e1d8e-9e77-4738-8cf0-ccd9fb032a98",
+            "key": "widget/weather"
+        },
+        {
+            "active": true,
+            "display": {
+                "colour": "#1f1e29",
+                "fontFamily": "Roboto",
+                "fontSize": 18,
+                "fontWeight": 400,
+                "position": "bottomRight"
+            },
+            "id": "7ab24470-118a-413c-922b-2da56681caf7",
+            "key": "widget/quote"
+        },
+        {
+            "active": true,
+            "display": {
+                "fontSize": 24,
+                "fontWeight": 300,
+                "position": "middleCentre"
+            },
+            "id": "7e2fc1d7-400c-454d-8b45-c9f94d06f0a7",
+            "key": "widget/links"
+        }
+    ],
+    "data": {
+        "103e1d8e-9e77-4738-8cf0-ccd9fb032a98": {
+            "latitude": -23.5506507,
+            "longitude": -46.6333824,
+            "name": "SP",
+            "showDetails": true,
+            "units": "si"
+        },
+        "10886a43-ce5a-4558-b28a-6642244a2f58": {
+            "expand": false,
+            "nsfw": false,
+            "tag": "pattern"
+        },
+        "495f0ac7-eb50-4ac5-970f-26727d5da42b": {
+            "items": [],
+            "show": 3
+        },
+        "5b79a705-a4d3-4729-a241-810f0973bbd1": {
+            "searchEngine": "google",
+            "suggestionsEngine": "google",
+            "suggestionsQuantity": 5
+        },
+        "7ab24470-118a-413c-922b-2da56681caf7": {},
+        "7e2fc1d7-400c-454d-8b45-c9f94d06f0a7": {
+            "columns": 4,
+            "links": [
+                {
+                    "icon": "youtube",
+                    "name": "Youtube¹",
+                    "url": "https://youtube.com"
+                },
+                {
+                    "icon": "twitch",
+                    "name": "Twitch²",
+                    "url": "https://twitch.tv"
+                },
+                {
+                    "icon": "facebook",
+                    "name": "Facebook³",
+                    "url": "https://www.facebook.com/"
+                },
+                {
+                    "icon": "video",
+                    "name": "Prime⁴",
+                    "url": "https://www.primevideo.com/detail/0SKQWRAW62EPRSY2CJZJALITMC/"
+                },
+                {
+                    "icon": "briefcase",
+                    "name": "UX-Endpoint⁵",
+                    "url": "https://gitlab.com/sgridd/0900.1018-ux-energy/ux-endpoint-fw"
+                },
+                {
+                    "icon": "cpu",
+                    "name": "NATH⁶",
+                    "url": "https://gitlab.com/leo_costa/sistema-autonomo-de-triagem-hospitalar"
+                },
+                {
+                    "icon": "gitlab",
+                    "name": "Meu Gitlab⁷",
+                    "url": "https://gitlab.com/leo_costa"
+                },
+                {
+                    "url": "https://drive.google.com/drive/u/1/my-drive",
+                    "name": "SGRIDD Drive",
+                    "icon": "cloud"
+                }
+            ],
+            "visible": true
+        },
+        "87199e6d-0bff-4610-859f-c50ea073607a": {
+            "by": "search",
+            "collections": "",
+            "featured": false,
+            "search": "space,galaxy",
+            "timeout": 0
+        },
+        "8c0a97ef-4832-43a3-adc7-4617f83f93fd": {
+            "angle": 0,
+            "from": "#50fa7b",
+            "to": "#1f1e29",
+            "type": "linear-gradient"
+        },
+        "cb165216-e848-4253-9f06-9b198ba70096": {
+            "expand": true,
+            "nsfw": false,
+            "tag": "space ,landscape"
+        },
+        "d44eff2c-a4e5-4ace-8220-7cd7592c57a1": {
+            "centerText": false,
+            "showBookAndAuthor": true
+        },
+        "e2d8a577-0880-470c-b88e-dc22c38c2576": {
+            "hour12": false,
+            "mode": "digital",
+            "showDate": false,
+            "showMinutes": true,
+            "showSeconds": false
+        }
+    },
+    "locale": "pt-BR",
+    "_persist": {
+        "version": -1,
+        "rehydrated": true
+    }
+}
