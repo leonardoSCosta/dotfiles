@@ -37,7 +37,7 @@ function shut_reason
 end
 
 function readSerial
-    ~/Tools/./serialReaderCLI --port-baud 115200 --log-dir ~/SGRIDD/seriallogs/ $argv
+    ~/Tools/./serialReaderCLI --log-dir ~/SGRIDD/seriallogs/ $argv
 end
 
 function cheat

@@ -18,6 +18,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
+" Plug 'connorholyday/vim-snazzy'
+" Plug 'ntk148v/vim-horizon'
 "Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/colorizer'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -43,6 +45,7 @@ Plug 'habamax/vim-asciidoctor'
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -76,7 +79,6 @@ let g:sneak#use_ic_scs = 1
 
 " Configuração do airline
 let g:airline_theme='dracula'
-
 let g:airline_detect_spelllang = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_y = ''
@@ -106,13 +108,6 @@ if g:colors_name == 'nord'
     let g:nord_italic=1
     let g:nord_italic_comments=1
     let g:nord_uniform_diff_background = 1
-endif
-
-" Customização do tema dracula
-if g:colors_name == 'dracula'
-    "let g:dracula#palette.bg        = ['#282A36FA',  61]
-    "let g:dracula#palette.purple    = ['#855AF9', 141]
-    "let g:dracula#palette.color_4   =  '#855AF9'
 endif
 
 set termguicolors

@@ -7,5 +7,6 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/nerdcommenter.vim
 source $HOME/.config/nvim/plug-config/asciidoctor.vim
+source $HOME/.config/nvim/plug-config/semshi.vim
 
 highlight Normal guibg=NONE
