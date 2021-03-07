@@ -76,3 +76,10 @@ function compressPDF
         echo "Insira o arquivo para ser comprimido!"
     end
 end
+
+function count_lines
+    fd -s -F \.cpp | xargs -I '{}' wc -l {} | awk '{print $1}' > aux
+    fd -s -F \.h | xargs -I '{}' wc -l {} | awk '{print $1}' >> aux
+    cat aux | xargs  | sed -e 's/\ /+/g' | bc
+    rm aux
+end
