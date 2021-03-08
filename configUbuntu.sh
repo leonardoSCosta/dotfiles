@@ -2,10 +2,12 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find cargo asciidoctor neofetch
+    clang clangd fd-find cargo asciidoctor neofetch meld
 
 sudo snap install shotcut --classic
 sudo snap install mailspring
+
+sudo npm install -g coinmon
 
 gem install asciidoctor-pdf
 mkdir ~/.config/nvim

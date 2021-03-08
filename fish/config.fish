@@ -50,6 +50,7 @@ end
 
 function fish_greeting
     colorscript -r
+    coinmon -f btc
 end
 
 function ..
