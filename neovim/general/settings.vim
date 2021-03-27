@@ -49,6 +49,7 @@ set undofile
 "set scrolloff=8
 
 set colorcolumn=80 " Configura a  coluna limite em 80 caracteres
+" hi ColorColumn  guibg='#BD93F9'
 set signcolumn=yes
 
 set updatetime=50         " Faster completion

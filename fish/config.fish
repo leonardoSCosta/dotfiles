@@ -50,6 +50,9 @@ end
 
 function fish_greeting
     colorscript -r
+end
+
+function bit
     coinmon -f btc
 end
 
@@ -83,4 +86,8 @@ function count_lines
     fd -s -F \.h | xargs -I '{}' wc -l {} | awk '{print $1}' >> aux
     cat aux | xargs  | sed -e 's/\ /+/g' | bc
     rm aux
+end
+
+function sound
+    pactl set-default-sink 2
 end
