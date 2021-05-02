@@ -69,7 +69,7 @@ call plug#end()
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 " Atalho para dar checkout no repositório atual
-nnoremap <leader>gc :GCheckout<CR>
+nnoremap <C-c>b :GBranches<CR>
 " Atalho para abrir o FZF
 nnoremap <C-p> :FZF<Enter>
 
@@ -97,7 +97,7 @@ let g:airline_symbols.branch = ' '
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#coc#error_symbol = '碌'
 
-set laststatus=2
+set laststatus=1
 
 " Configuração do esquema de cores
 set background=dark

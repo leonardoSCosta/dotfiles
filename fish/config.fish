@@ -15,6 +15,7 @@ alias stmmx=~/STM32CubeMX/STM32CubeMX
 alias pip=pip3
 alias matlab=~/MATLAB/R2020b/bin/matlab
 alias fd=fdfind
+alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
 
 function move_date
     mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -26,6 +27,10 @@ end
 
 function ls
     exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
+end
+
+function lst
+    ls -T -L $argv
 end
 
 function clc
@@ -89,5 +94,5 @@ function count_lines
 end
 
 function sound
-    pactl set-default-sink 2
+    pactl set-default-sink $argv
 end
