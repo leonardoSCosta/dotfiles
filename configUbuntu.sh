@@ -115,8 +115,15 @@ sudo cp colorscript.sh /usr/bin/colorscript
 
 sudo adduser $USER dialout
 
-# Evitar popping sound
-# Adicionar a linha
-options snd-hda-intel power_save=0 power_save_controller=N
-# no arquivo
-/etc/modprobe.d/alsa-base.conf
+## Evitar popping sound
+## Adicionar a linha
+# options snd-hda-intel power_save=0 power_save_controller=N
+## no arquivo
+# /etc/modprobe.d/alsa-base.conf
+
+## Corrigir travamento ao usar multimedia keys
+# sudo vim /usr/share/X11/xkb/symbols/br
+## Comentar a linha
+# modifier_map Mod3 { Scroll_Lock };
+## Usar o comando
+# setxkbmap

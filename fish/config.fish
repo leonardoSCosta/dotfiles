@@ -93,6 +93,12 @@ function count_lines
     rm aux
 end
 
+function count_py_lines
+    fd -s -F \.py | xargs -I '{}' wc -l {} | awk '{print $1}' > aux
+    cat aux | xargs  | sed -e 's/\ /+/g' | bc
+    rm aux
+end
+
 function sound
     pactl set-default-sink $argv
 end

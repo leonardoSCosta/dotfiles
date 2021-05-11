@@ -46,6 +46,7 @@ Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'dag/vim-fish'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
