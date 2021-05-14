@@ -21,6 +21,10 @@ cp ~/.cargo/bin/exa ~/.local/bin/
 cd
 git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme && ./autogen.sh --prefix=/usr
 sudo make install
+cd
+git clone https://github.com/cbrnix/Flatery && cd Flatery && ./instal.sh
+cd; rm -r Flatery
+gsettings set org.gnome.desktop.interface icon-theme \'Flatery-Dark\'
 
 # Vamos instalar o spotify também
 #curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add
