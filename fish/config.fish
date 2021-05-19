@@ -1,4 +1,5 @@
 starship init fish | source
+export PATH="PATH=$PATH:$PATH=PATH=$PATH:$HOME/.cargo/bin"
 
 alias grsim=~/.grsim
 alias tempo=~/.weather

@@ -13,7 +13,10 @@ gem install asciidoctor-pdf
 mkdir ~/.config/nvim
 
 cargo install exa
-cp ~/.cargo/bin/exa ~/.local/bin/
+cargo install dust
+
+# Ja estou exportando o /home/$USER/.cargo/bin no config.fish
+# cp ~/.cargo/bin/exa ~/.local/bin/
 
 # git clone https://gitlab.com/leo_costa/my-vim-config
 
