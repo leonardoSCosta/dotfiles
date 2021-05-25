@@ -42,8 +42,10 @@ gsettings set org.gnome.desktop.interface icon-theme \'Flatery-Dark\'
 #**Nerd Fonts** - [website](https://www.nerdfonts.com/font-downloads)
 #**Scriptina** - [website](https://www.dafont.com/scriptina.font) - Handwritten font used in the lock screen
 #(You only need to pick and download one Nerd Font. They all include the same icons)
-
 mv .fonts $HOME
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d JetBrainsMono/
+mv JetBrainsMono/* ~/.fonts
 fc-cache -v
 
 # Tema dracula GTK
