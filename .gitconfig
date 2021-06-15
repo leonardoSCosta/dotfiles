@@ -15,3 +15,5 @@
   prompt = false
 [diff]
 	submodule = log
+[merge "ours"]
+	driver = true

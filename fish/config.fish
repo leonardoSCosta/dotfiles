@@ -1,7 +1,8 @@
 starship init fish | source
 export PATH="PATH=$PATH:$PATH=PATH=$PATH:$HOME/.cargo/bin"
+export "BAT_THEME=Dracula"
 
-alias grsim=~/.grsim
+alias grsim=~/SSL/grSim/bin/grSim
 alias tempo=~/.weather
 alias cleanJournal=~/.cleanJournal
 alias refbox=~/.refbox
@@ -24,6 +25,10 @@ end
 
 function compile_C
     gcc $argv.c -o $argv; ./$argv
+end
+
+function compile_adoc
+    asciidoctor-pdf $argv.adoc; asciidoctor $argv.adoc ; zathura $argv.pdf &
 end
 
 function ls
@@ -102,4 +107,8 @@ end
 
 function sound
     pactl set-default-sink $argv
+end
+
+function set_tiling
+    gsettings set org.gnome.shell.overrides edge-tiling $argv
 end
