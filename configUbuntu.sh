@@ -121,6 +121,8 @@ sudo cp colorscript.sh /usr/bin/colorscript
 # Setar alacritty como terminal padrão
 #sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
 #sudo update-alternatives --config x-terminal-emulator
+# Setar kitty como terminal padrão
+sudo update-alternatives --install /usr/bin/x-terminal-emulator kitty-terminal /usr/bin/kitty 50
 
 sudo adduser $USER dialout
 
