@@ -17,7 +17,9 @@ alias stmmx=~/STM32CubeMX/STM32CubeMX
 alias pip=pip3
 alias matlab=~/MATLAB/R2020b/bin/matlab
 alias fd=fdfind
+alias icat="kitty +kitten icat"
 alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
+alias list_terminals='sudo update-alternatives --config x-terminal-emulator'
 
 function move_date
     mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/

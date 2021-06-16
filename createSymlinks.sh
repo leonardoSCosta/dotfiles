@@ -14,3 +14,4 @@ ln -s $PWD/plugin $HOME/.vim/plugin
 ln -s $PWD/syntax $HOME/.vim/syntax
 ln -s $PWD/neovim $HOME/.config/nvim
 ln -s $PWD/vim-latex/tex.vim $HOME/.vim/plugged/vim-latex/ftplugin/tex.vim
+ln -s $PWD/kitty $HOME/.config/

@@ -2,7 +2,7 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find cargo asciidoctor neofetch meld
+    clang clangd fd-find cargo asciidoctor neofetch meld kitty
 
 sudo snap install shotcut --classic
 sudo snap install mailspring
