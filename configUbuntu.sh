@@ -66,6 +66,7 @@ mkdir -p ~/.config && touch ~/.config/starship.toml
 cd; cd my-vim-config
 mv starship.toml $HOME/.config/
 
+mkdir -p ~/.config/fish
 cp fish/config.fish ~/.config/fish/
 
 cp ./.vimrc ~/
