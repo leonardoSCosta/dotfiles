@@ -34,6 +34,13 @@ staged = ' [++\($count\)](green)'
 renamed = " 﨣"
 deleted = "🗑"
 
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[package]
+format = "via [🎁 $version](208 bold) "
+
 [memory_usage]
 disabled = false
 threshold = -1

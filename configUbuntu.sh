@@ -5,8 +5,6 @@ sudo apt install -y \
     clang clangd fd-find cargo asciidoctor neofetch meld kitty
 
 sudo snap install shotcut --classic
-sudo snap install mailspring
-
 sudo npm install -g coinmon
 
 gem install asciidoctor-pdf
@@ -18,12 +16,11 @@ cargo install dust
 # Ja estou exportando o /home/$USER/.cargo/bin no config.fish
 # cp ~/.cargo/bin/exa ~/.local/bin/
 
-# git clone https://gitlab.com/leo_costa/my-vim-config
-
 # Tema de ícones
 cd
 git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme && ./autogen.sh --prefix=/usr
 sudo make install
+
 cd
 git clone https://github.com/cbrnix/Flatery && cd Flatery && ./instal.sh
 cd; rm -r Flatery
@@ -72,36 +69,6 @@ cp fish/config.fish ~/.config/fish/
 cp ./.vimrc ~/
 cp -rf ./Wallpapers ~/Imagens/
 
-# Instalar o alacritty
-#cd
-#git clone https://github.com/alacritty/alacritty.git
-#cd alacritty
-
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-#rustup override set stable
-#rustup update stable
-
-
-#sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
-
-#cargo build --release
-
-# Desktop entry
-#sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
-#sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-#sudo desktop-file-install extra/linux/Alacritty.desktop
-#sudo update-desktop-database
-
-# Manual pages
-#sudo mkdir -p /usr/local/share/man/man1
-#gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-
-# Shell completions for bash
-#mkdir -p ~/.bash_completion
-#cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
-#echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
-
 # Deixa o fish como shell padrão
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
@@ -119,12 +86,8 @@ sudo mkdir -p /opt/shell-color-scripts/colorscripts
 sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
 
-# Setar alacritty como terminal padrão
-#sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
-#sudo update-alternatives --config x-terminal-emulator
 # Setar kitty como terminal padrão
 sudo update-alternatives --install /usr/bin/x-terminal-emulator kitty-terminal /usr/bin/kitty 50
-
 sudo adduser $USER dialout
 
 ## Evitar popping sound
