@@ -27,10 +27,10 @@ conflicted = "🏳  "
 ahead = " "
 behind = ""
 diverged = " ﲅ "
-untracked = ""
-stashed = " "
+untracked = " "
+stashed = "  "
 modified = " פֿ "
-staged = ' [++\($count\)](green)'
+staged = '  [++\($count\)](green)'
 renamed = " 﨣"
 deleted = "🗑"
 
