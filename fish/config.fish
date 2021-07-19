@@ -20,6 +20,7 @@ alias fd=fdfind
 alias icat="kitty +kitten icat --align left"
 alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
 alias list_terminals='sudo update-alternatives --config x-terminal-emulator'
+alias clock="tty-clock -s -c -C5 -r"
 
 function move_date
     mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/

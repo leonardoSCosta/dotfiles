@@ -16,7 +16,8 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find cargo asciidoctor neofetch meld kitty figlet lolcat
+    clang clangd fd-find cargo asciidoctor neofetch meld kitty figlet lolcat \
+    tty-clock cava dunst
 
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
