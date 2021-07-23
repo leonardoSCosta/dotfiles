@@ -115,3 +115,30 @@ end
 function set_tiling
     gsettings set org.gnome.shell.overrides edge-tiling $argv
 end
+
+function clean_latex
+    rm *.xmpi
+    rm *.aux
+    rm *.bbl
+    rm *.bcf
+    rm *.blg
+    rm *.idx
+    rm *.lof
+    rm *.log
+    rm *.lot
+    rm *.mw
+    rm *.out
+    rm *.pdf
+    rm *.run.xml
+    rm *.synctex.gz
+    rm *.toc
+    rm *.xdy
+    rm *.alg
+    rm *.fdb_latexmk
+    rm *.fls
+    rm *.ilg
+    rm *.ind
+
+    rm ./pre-textuais/*.aux
+    rm ./textuais/*.aux
+end
