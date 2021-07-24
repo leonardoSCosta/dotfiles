@@ -24,7 +24,7 @@ modules-right = filesystem backlight-acpi pulseaudio memory cpu wlan eth tempera
 
 tray-position = right
 tray-padding = 2
-; tray-background = #0063ff
+tray-background = ${colors.tray-color}
 
 ;wm-restack = generic
 ;wm-restack = bspwm
