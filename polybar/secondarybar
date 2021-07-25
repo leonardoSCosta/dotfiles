@@ -18,8 +18,7 @@ module-margin-left = 2
 module-margin-right = 0
 
 ; modules-left = bspwm i3
-; modules-center = date
-modules-right = memory cpu wlan eth temperature battery
+modules-center = backlight-acpi
 ; modules-right = filesystem backlight-acpi alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 ; tray-position = right

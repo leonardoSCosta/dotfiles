@@ -18,16 +18,16 @@
 
 [bar/primarybar]
 monitor = ${env:MONITOR:}
-include-file = ./primarybar
-include-file = ./p_barstyle
+include-file = ~/.config/polybar/primarybar
+include-file = ~/.config/polybar/p_barstyle
 
 [bar/secondarybar]
 monitor = ${env:MONITOR:}
-include-file = ./secondarybar
-include-file = ./s_barstyle
+include-file =  ~/.config/polybar/secondarybar
+include-file =  ~/.config/polybar/s_barstyle
 
 [colors]
-background     = #44475A
+background     = #363949
 background-alt = #000000
 foreground     = #FFFFFF
 foreground-alt = #BD93F9
