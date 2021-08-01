@@ -21,9 +21,9 @@ framerate = 60
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-bars = 40
-bar_width = 5
-bar_spacing = 2
+bars = 150
+bar_width = 1
+bar_spacing = 0
 
 
 # Lower and higher cutoff frequencies for lowest and highest bars
@@ -86,7 +86,7 @@ bar_spacing = 2
 # 'stereo' mirrors both channels with low frequencies in center.
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
-; channels = stereo
+; channels = mono
 ; mono_option = average
 
 # Raw output target. A fifo will be created if target does not exist.

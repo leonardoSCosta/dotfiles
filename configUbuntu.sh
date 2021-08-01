@@ -17,7 +17,8 @@ sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
     clang clangd fd-find cargo asciidoctor neofetch meld kitty figlet lolcat \
-    tty-clock cava dunst gnome-shell-extension-autohidetopbar
+    tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
+    fontforge gucharmap libnotify-dev
 
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
@@ -133,6 +134,21 @@ sudo mv grub/dracula /usr/share/grub/themes/
 sudo echo "GRUB_GFXMODE=1920x1080" >> /etc/default/grub
 sudo echo "GRUB_THEME=\"/usr/share/grub/themes/dracula/theme.txt\"" >> /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+# ============================================================================
+#                            _       _
+#                _ __   ___ | |_   _| |__   __ _ _ __
+#               | '_ \ / _ \| | | | | '_ \ / _` | '__|
+#               | |_) | (_) | | |_| | |_) | (_| | |
+#               | .__/ \___/|_|\__, |_.__/ \__,_|_|
+#               |_|            |___/
+
+echo "Instal Gmail module"
+pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+cd ~/.config/polybar
+curl -LO https://github.com/crabvk/polybar-gmail/archive/master.tar.gz
+tar zxf master.tar.gz && rm master.tar.gz
+mv polybar-gmail-master gmail
+python3 ~/.config/polybar/gmail/auth.py
 
 # ============================================================================
 #       ____             __ _

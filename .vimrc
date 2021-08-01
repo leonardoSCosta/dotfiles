@@ -137,7 +137,7 @@ let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_AdvancedMath = 1
 let g:Tex_UseMakefile = 0
 " Mudar para 'biber' caso for compilar utilizando ele
-let g:Tex_BibtexFlavor = 'biber'
-" let g:Tex_BibtexFlavor = 'bibtex'
+" let g:Tex_BibtexFlavor = 'biber'
+let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
