@@ -21,6 +21,7 @@ alias icat="kitty +kitten icat --align left"
 alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
 alias list_terminals='sudo update-alternatives --config x-terminal-emulator'
 alias clock="tty-clock -s -c -C5 -r"
+alias toggle_notifs="dunstctl set-paused toggle; echo 'Notifications paused ?'; dunstctl is-paused"
 
 function move_date
     mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -109,10 +110,12 @@ function count_py_lines
 end
 
 function sound
+    # int
     pactl set-default-sink $argv
 end
 
 function set_tiling
+    # true/false
     gsettings set org.gnome.shell.overrides edge-tiling $argv
 end
 

@@ -18,8 +18,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
-" Plug 'connorholyday/vim-snazzy'
-" Plug 'ntk148v/vim-horizon'
 "Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/colorizer'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -93,10 +91,14 @@ endif
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols.spell = '暈'
+let g:airline_symbols.spell = ''
 let g:airline_symbols.branch = ' '
-let g:airline#extensions#coc#warning_symbol = ' '
-let g:airline#extensions#coc#error_symbol = '碌'
+let g:airline_symbols.readonly = ' '
+let g:airline_symbols.linenr = ' '
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+let g:airline#extensions#coc#warning_symbol = ' '
+let g:airline#extensions#coc#error_symbol = ' '
 
 set laststatus=1
 
@@ -113,7 +115,7 @@ endif
 
 set termguicolors
 
-let g:colorizer_auto_filetype='cpp,h,vim,tex,markdown'
+let g:colorizer_auto_filetype='cpp,h,vim,tex,markdown,dosini'
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -137,7 +139,7 @@ let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_AdvancedMath = 1
 let g:Tex_UseMakefile = 0
 " Mudar para 'biber' caso for compilar utilizando ele
-" let g:Tex_BibtexFlavor = 'biber'
-let g:Tex_BibtexFlavor = 'bibtex'
+let g:Tex_BibtexFlavor = 'biber'
+" let g:Tex_BibtexFlavor = 'bibtex'
 
 set winaltkeys=no
