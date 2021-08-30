@@ -1,5 +1,6 @@
 " Muda a leader key para ' '
 let g:mapleader = " "
+let g:maplocalleader = " "
 
 syntax enable              " Enables syntax highlighting
 
@@ -63,6 +64,8 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 autocmd FileType c inoremap {{ <Enter>{<Enter>}<Esc>O
 autocmd FileType cpp inoremap {{ <Enter>{<Enter>}<Esc>O
+
+set sessionoptions-=blank
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 

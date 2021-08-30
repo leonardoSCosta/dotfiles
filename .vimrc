@@ -34,8 +34,9 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'jremmen/vim-ripgrep'
 
 " Plugins para LaTeX
-Plug 'vim-latex/vim-latex'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
+" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " Asciidoctor
 Plug 'habamax/vim-asciidoctor'
@@ -45,6 +46,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
+Plug 'vim-syntastic/syntastic'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -81,9 +83,13 @@ let g:airline_theme='dracula'
 let g:airline_detect_spelllang = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_y = ''
+" Remove o contador de linhas em formato de porcentagem
+" Original = '%p%% %#__accent_bold#%{g:airline_symbols.linenr}%l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#:%v'
+let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#:%v'
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
+let g:airline#extensions#hunks#enabled=0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -99,6 +105,8 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#coc#error_symbol = ' '
+let g:airline_symbols.notexists = 'Ɇ'
+
 
 set laststatus=1
 
@@ -128,18 +136,42 @@ let g:netrw_winsize = 25
 " Configura o plugin do LaTeX
 filetype plugin on
 filetype indent on
+set conceallevel=2
 let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:livepreview_previewer = 'zathura'
-let g:Tex_CustomTemplateDirectory = '~/.config/nvim/plug-config/TemplatesLatex/,~/.vim/plugged/vim-latex/ftplugin/latex-suite/templates/'
-let g:Tex_FoldedSections=""
-let g:Tex_FoldedEnvironments=""
-let g:Tex_FoldedMusic=""
-let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_AdvancedMath = 1
-let g:Tex_UseMakefile = 0
+" let g:Tex_DefaultTargetFormat='pdf'
+" let g:livepreview_previewer = 'zathura'
+" let g:Tex_CustomTemplateDirectory = '~/.config/nvim/plug-config/TemplatesLatex/,~/.vim/plugged/vim-latex/ftplugin/latex-suite/templates/'
+" let g:Tex_FoldedSections=""
+" let g:Tex_FoldedEnvironments=""
+" let g:Tex_FoldedMusic=""
+" let g:Tex_MultipleCompileFormats='pdf'
+" let g:Tex_AdvancedMath = 1
+" let g:Tex_UseMakefile = 0
 " Mudar para 'biber' caso for compilar utilizando ele
-let g:Tex_BibtexFlavor = 'biber'
+" let g:Tex_BibtexFlavor = 'biber'
 " let g:Tex_BibtexFlavor = 'bibtex'
+let g:vimtex_view_method='zathura'
+
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_loc_list_height = 3
+
+" let g:syntastic_quiet_messages = {
+"     \ "!level":  "warnings",
+"     \ "type":    "style",
+"     \ "regex":   '\ccommand terminated',
+"     \ "file:p":  ['\m\c\.tex$'] }
 
 set winaltkeys=no

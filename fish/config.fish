@@ -22,9 +22,10 @@ alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
 alias list_terminals='sudo update-alternatives --config x-terminal-emulator'
 alias clock="tty-clock -s -c -C5 -r"
 alias toggle_notifs="dunstctl set-paused toggle; echo 'Notifications paused ?'; dunstctl is-paused"
+alias lg='git status'
 
 function move_date
-    mkdir Dia_$argv; ls | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
+    mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
 end
 
 function compile_C
@@ -36,7 +37,7 @@ function compile_adoc
 end
 
 function ls
-    exa --group-directories-first --icons -l -h -m --git --time-style long-iso $argv
+    exa --group-directories-first --icons -h -m --git --time-style long-iso $argv
 end
 
 function lst
