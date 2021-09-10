@@ -16,7 +16,7 @@
 sudo apt install -y \
     build-essential git neovim nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
-    clang clangd fd-find cargo asciidoctor neofetch meld kitty figlet lolcat \
+    clang clangd fd-find asciidoctor neofetch meld kitty figlet lolcat \
     tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
     fontforge gucharmap libnotify-dev
 
@@ -24,6 +24,9 @@ sudo snap install shotcut --classic
 sudo npm install -g coinmon
 
 gem install asciidoctor-pdf
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install exa
 # cargo install dust # Não funciona no ubuntu 20.04
@@ -99,6 +102,10 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Dracula theme para o fish
 fisher install dracula/fish
+
+# Rustup completions para o fish
+mkdir -p ~/.config/fish/completions
+rustup completions fish > ~/.config/fish/completions/rustup.fish
 
 # Setar kitty como terminal padrão
 sudo update-alternatives --install /usr/bin/x-terminal-emulator \
