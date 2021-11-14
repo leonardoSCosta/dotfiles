@@ -13,12 +13,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Plugins de temas de cor
-Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'arcticicestudio/nord-vim'
-"Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/colorizer'
 Plug 'junegunn/rainbow_parentheses.vim'
 
@@ -41,12 +36,16 @@ Plug 'lervag/vimtex'
 " Asciidoctor
 Plug 'habamax/vim-asciidoctor'
 
+" Snippets
+Plug 'sirver/ultisnips'
+
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
 Plug 'vim-syntastic/syntastic'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -151,6 +150,7 @@ let g:tex_flavor='latex'
 " let g:Tex_BibtexFlavor = 'biber'
 " let g:Tex_BibtexFlavor = 'bibtex'
 let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
 
 if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
@@ -173,5 +173,8 @@ let g:syntastic_loc_list_height = 3
 "     \ "type":    "style",
 "     \ "regex":   '\ccommand terminated',
 "     \ "file:p":  ['\m\c\.tex$'] }
+
+" C, C++, etc LSP
+let g:lsp_cxx_hl_use_text_props = 1
 
 set winaltkeys=no

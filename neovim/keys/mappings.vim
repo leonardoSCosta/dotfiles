@@ -4,9 +4,8 @@ nnoremap <M-k>    :resize -2<CR>
 nnoremap <M-h>    :vertical resize +2<CR>
 nnoremap <M-l>    :vertical resize -2<CR>
 
-" Utiliza jk ou kj para sair do insert mode e já salvar automaticamente
+" Utiliza jk para sair do insert mode e já salvar automaticamente
 imap jk <Esc><Leader>w
-imap kj <Esc><Leader>w
 
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
@@ -26,3 +25,6 @@ nnoremap <leader>w :w<CR>
 
 " Contar número de palavras no parágrafo
 nnoremap <leader>tc vipg<C-g><Esc>
+
+" Usar o ripgrep na palavra sob o cursor
+nnoremap <leader>rg yiw:Rg <C-r>"<CR>
