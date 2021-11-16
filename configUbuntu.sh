@@ -31,6 +31,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install exa
 # cargo install dust # Não funciona no ubuntu 20.04
 
+# Importante para gerar o arquivo de database de compilação na mão (compile_commands.json)
+pip install compiledb
+
 # ============================================================================
 
 # ============================================================================
