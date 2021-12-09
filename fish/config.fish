@@ -146,3 +146,8 @@ function clean_latex
     rm ./pre-textuais/*.aux
     rm ./textuais/*.aux
 end
+
+function setup_webots
+    export WEBOTS_HOME=/usr/local/webots
+    compiledb make
+end

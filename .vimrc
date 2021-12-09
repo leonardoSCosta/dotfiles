@@ -45,7 +45,6 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
 Plug 'vim-syntastic/syntastic'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -57,9 +56,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Outros
 Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 
 call plug#end()
@@ -89,6 +85,7 @@ let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#syntastic#enabled = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -105,7 +102,6 @@ let g:airline_symbols.dirty='⚡'
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#coc#error_symbol = ' '
 let g:airline_symbols.notexists = 'Ɇ'
-
 
 set laststatus=1
 

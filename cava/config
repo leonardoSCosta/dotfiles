@@ -124,9 +124,9 @@ bar_spacing = 0
 gradient = 1
 gradient_count = 3
 
-gradient_color_1 = '#50FA7B'
+gradient_color_1 = '#BD93F9'
 gradient_color_2 = '#86C7BA'
-gradient_color_3 = '#BD93F9'
+gradient_color_3 = '#50FA7B'
 
 
 
@@ -137,7 +137,7 @@ gradient_color_3 = '#BD93F9'
 ; integral = 77
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-; monstercat = 0
+monstercat = 1
 ; waves = 0
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.

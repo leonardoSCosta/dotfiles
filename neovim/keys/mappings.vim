@@ -28,3 +28,9 @@ nnoremap <leader>tc vipg<C-g><Esc>
 
 " Usar o ripgrep na palavra sob o cursor
 nnoremap <leader>rg yiw:Rg <C-r>"<CR>
+
+" Para atualizar o arquivo
+nnoremap <leader>ck <Esc>:checktime<CR>
+
+" Inserir docstring
+nnoremap <leader>ds :Dox<CR>

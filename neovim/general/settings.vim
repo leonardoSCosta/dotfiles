@@ -27,11 +27,10 @@ set shiftwidth=4           " Change the number of space characters inserted for 
 set smarttab               " Makes tabbing smarter
 set expandtab              " Converts tabs to spaces
 
-" set smartcase
-" set ignorecase
+set smartcase
+set ignorecase
 set smartindent            " Makes indenting smart
 set autoindent             " Good auto indent
-
 
 set incsearch
 set nohlsearch
