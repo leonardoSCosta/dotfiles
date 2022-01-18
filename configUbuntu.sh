@@ -154,6 +154,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Instal Gmail module"
 pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+pip3 install pulsectl # Para controlar o sink de som
 cd ~/.config/polybar
 curl -LO https://github.com/crabvk/polybar-gmail/archive/master.tar.gz
 tar zxf master.tar.gz && rm master.tar.gz
