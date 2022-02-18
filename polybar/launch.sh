@@ -26,4 +26,6 @@ fi
 
 echo "Bars launched..."
 
+# Reset eww
+eww kill
 eww daemon
