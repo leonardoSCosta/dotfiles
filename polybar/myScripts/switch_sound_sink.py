@@ -4,6 +4,11 @@ Muda o destino padrão do som (Caixa de som/Headset)
 """
 import argparse
 import pulsectl
+import pgi
+pgi.require_version('Notify', '0.7')
+from pgi.repository import Notify
+
+Notify.init("Sound sink switch")
 
 HEADSET = False
 SOUND_BOX = False
@@ -24,10 +29,15 @@ if args.SOUND_BOX is not None:
 pulse = pulsectl.Pulse('sink-switch')
 sinks = pulse.sink_list()
 
+ICON_PATH = "/usr/share/icons/candy-icons/apps/scalable/"
+
 HEADSET_STR = "Corsair HS60"
 HEADSET_INDEX = -1
+HEADSET_ICON = ICON_PATH + "info.mumble.Mumble.svg"
+
 SOUND_BOX_STR = "HDA NVidia"
 SOUND_BOX_INDEX = -1
+SOUND_BOX_ICON = ICON_PATH + "org.gnome.Rhythmbox.svg"
 
 for n, sink in enumerate(sinks):
     if HEADSET_STR in sink.description:
@@ -42,9 +52,18 @@ if HEADSET and HEADSET_INDEX != -1:
     print("Set", HEADSET_STR)
     pulse.default_set(sinks[HEADSET_INDEX])
     print(pulse.server_info().default_sink_name)
+    notification = Notify.Notification.new("Sink Changed", "Headset",
+                                           HEADSET_ICON)
 elif SOUND_BOX and SOUND_BOX_INDEX != -1:
     print("Set", SOUND_BOX_STR)
     pulse.default_set(sinks[SOUND_BOX_INDEX])
     print(pulse.server_info().default_sink_name)
+    notification = Notify.Notification.new("Sink Changed", "Sound Box",
+                                           SOUND_BOX_ICON)
 else:
     print("Sink not found")
+    notification = Notify.Notification.new("Sink Change Error",
+                                           "Sink Not Found")
+    notification.set_urgency(2)
+
+notification.show()
