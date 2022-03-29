@@ -1,7 +1,7 @@
 " Extensoes utilizadas:
 " coc-python coc-clangd coc-vimlsp coc-java coc-markdownlint coc-texlab
 " coc-json coc-tsserver coc-snippets coc-explorer coc-lua coc-marketplace
-" coc-fish
+" coc-fish coc-calc
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -160,3 +160,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
+" clangd
+autocmd FileType cpp nnoremap <silent> <nowait> ts :CocCommand clangd.switchSourceHeader<CR>

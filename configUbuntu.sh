@@ -23,7 +23,7 @@ sudo apt install -y \
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
 
-gem install asciidoctor-pdf
+sudo gem install asciidoctor-pdf
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -175,6 +175,10 @@ sudo adduser $USER dialout
 
 # Evitar popping sound
 sudo echo "options snd-hda-intel power_save=0 power_save_controller=N" >> /etc/modprobe.d/alsa-base.conf
+
+# Ruído estranho no áudio usb
+# colocar: default-sample-rate = 48000
+# em: /etc/pulse/daemon.conf
 
 # Corrigir travamento ao usar multimedia keys
 # sudo vim /usr/share/X11/xkb/symbols/br
