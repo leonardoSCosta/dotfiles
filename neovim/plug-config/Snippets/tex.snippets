@@ -1,3 +1,57 @@
+#    b   Beginning of line - A snippet with this option is expanded only if the
+#        tab trigger is the first word on the line. In other words, if only
+#        whitespace precedes the tab trigger, expand. The default is to expand
+#        snippets at any position regardless of the preceding non-whitespace
+#        characters.
+#
+#    i   In-word expansion - By default a snippet is expanded only if the tab
+#        trigger is the first word on the line or is preceded by one or more
+#        whitespace characters. A snippet with this option is expanded
+#        regardless of the preceding character. In other words, the snippet can
+#        be triggered in the middle of a word.
+#
+#    w   Word boundary - With this option, the snippet is expanded if
+#        the tab trigger start matches a word boundary and the tab trigger end
+#        matches a word boundary. In other words the tab trigger must be
+#        preceded and followed by non-word characters. Word characters are
+#        defined by the 'iskeyword' setting. Use this option, for example, to
+#        permit expansion where the tab trigger follows punctuation without
+#        expanding suffixes of larger words.
+#
+#    r   Regular expression - With this option, the tab trigger is expected to
+#        be a python regular expression. The snippet is expanded if the recently
+#        typed characters match the regular expression. Note: The regular
+#        expression MUST be quoted (or surrounded with another character) like a
+#        multi-word tab trigger (see above) whether it has spaces or not. A
+#        resulting match is passed to any python code blocks in the snippet
+#        definition as the local variable "match".
+#
+#    t   Do not expand tabs - If a snippet definition includes leading tab
+#        characters, by default UltiSnips expands the tab characters honoring
+#        the Vim 'shiftwidth', 'softtabstop', 'expandtab' and 'tabstop'
+#        indentation settings. (For example, if 'expandtab' is set, the tab is
+#        replaced with spaces.) If this option is set, UltiSnips will ignore the
+#        Vim settings and insert the tab characters as is. This option is useful
+#        for snippets involved with tab delimited formats.
+#
+#    s   Remove whitespace immediately before the cursor at the end of a line
+#        before jumping to the next tabstop.  This is useful if there is a
+#        tabstop with optional text at the end of a line.
+#
+#    m   Trim all whitespaces from right side of snippet lines. Useful when
+#        snippet contains empty lines which should remain empty after expanding.
+#        Without this option empty lines in snippets definition will have
+#        indentation too.
+#
+#    e   Custom context snippet - With this option expansion of snippet can be
+#        controlled not only by previous characters in line, but by any given
+#        python expression. This option can be specified along with other
+#        options, like 'b'. See |UltiSnips-custom-context-snippets| for more info.
+#
+#    A   Snippet will be triggered automatically, when condition matches.
+#        See |UltiSnips-autotrigger| for more info.
+
+
 global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
@@ -11,13 +65,13 @@ def env(name):
 
 endglobal
 
-snippet beg "begin{} \n end{}" bA
+snippet "beg" "begin{} \n end{}" b
 \begin{$1}
 	$0
 \end{$1}
 endsnippet
 
-snippet beg "begin{} ... end{}" A
+snippet "beg" "begin{} ... end{}" i
 \begin{$1} $0 \end{$1}
 endsnippet
 
@@ -56,9 +110,97 @@ snippet ^^ "auto comp superscript" iA
 ^{$1}$0
 endsnippet
 
+context "math()"
+snippet <= "Inserir menor igual" iA
+\leq $0
+endsnippet
+
+context "math()"
+snippet != "Inserir diferente" iA
+\neq $0
+endsnippet
+
+context "math()"
+snippet >= "Inserir maior igual" iA
+\geq $0
+endsnippet
+
+context "math()"
+snippet '->' "Inserir seta para direita" iA
+\rightarrow $0
+endsnippet
+
+context "math()"
+snippet '-x' "Inserir seta para direita com texto" iA
+\xrightarrow{$1} $0
+endsnippet
+
+context "math()"
+snippet <- "Inserir seta para esquerda" iA
+\leftarrow $0
+endsnippet
+
+context "math()"
+snippet 'xx' "Inserir \times" iA
+\times $0
+endsnippet
+
+context "math()"
+snippet '...' "Inserir \cdots" iA
+\cdots $0
+endsnippet
+
+context "env('math')"
+priority 10
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+context "env('math')"
+priority 100
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "env('math')"
+priority 10
+snippet "vec" "vec" riA
+\vec{$1}$0
+endsnippet
+
+context "env('math')"
+priority 100
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+# snippet sympy "sympy block " w
+# sympy $1 sympy$0
+# endsnippet
+
+# priority 10000
+# snippet 'sympy(.*)sympy' "evaluate sympy" wr
+# `!p
+# from sympy import *
+# x, y, z, t = symbols('x y z t')
+# k, m, n = symbols('k m n', integer=True)
+# f, g, h = symbols('f g h', cls=Function)
+# init_printing()
+# snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
+#     .replace('^', '**') \
+#     .replace('{', '(') \
+#     .replace('}', ')') + ')')
+# `
+# endsnippet
+
 context "env('figure')"
 snippet "llb" "Inserir label" wrA
 \label{fig:$1}$0
+endsnippet
+
+context "env('table')"
+snippet "llb" "Inserir label" wrA
+\label{tb:$1}$0
 endsnippet
 
 context "env('equation')"
@@ -71,24 +213,22 @@ snippet "llb" "Inserir label" wrA
 \label{eq:$1}$0
 endsnippet
 
-priority 10
-snippet "bar" "bar" riA
-\overline{$1}$0
+context "env('itemize')"
+snippet "it" "Inserir \item" bA
+\item $0
 endsnippet
 
-priority 100
-snippet "([a-zA-Z])bar" "bar" riA
-\overline{`!p snip.rv=match.group(1)`}
+context "env('enumerate')"
+snippet "it" "Inserir \item" bA
+\item $0
 endsnippet
 
-priority 10
-snippet "vec" "vec" riA
-\vec{$1}$0
+snippet '...' "Inserir \ldots" iA
+\ldots $0
 endsnippet
 
-priority 100
-snippet "([a-zA-Z])vec" "vec" riA
-\vec{`!p snip.rv=match.group(1)`}
+snippet "i$" "Inserir math" iA
+\$$1\$ $0
 endsnippet
 
 snippet "fbf" "Inserir texto em negrito" riA
@@ -122,6 +262,12 @@ snippet "2efi" "Inserir duas figuras lado a lado" rA
 \end{figure}
 endsnippet
 
+snippet "eit" "Inserir itemize" bA
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
 snippet "eal" "Inserir equações alinhadas" bA
 \begin{align}
 	$1
@@ -132,6 +278,10 @@ snippet "eeq" "Inserir equação" bA
 \begin{equation}
 	$1
 \end{equation}
+endsnippet
+
+snippet "sch" "Inserir chapter" bA
+\chapter{$1}$0
 endsnippet
 
 snippet "sec" "Inserir section" bA
@@ -152,4 +302,12 @@ endsnippet
 
 snippet "refF" "Inserir referência à figura" riA
 ~\ref{fig:$1}$0
+endsnippet
+
+snippet "refT" "Inserir referência à tabela" riA
+~\ref{tb:$1}$0
+endsnippet
+
+snippet "i'" "Inserir aspas" riA
+\`\`$1'' $0
 endsnippet

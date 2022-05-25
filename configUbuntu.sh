@@ -18,7 +18,7 @@ sudo apt install -y \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
     clang clangd fd-find asciidoctor neofetch meld kitty figlet lolcat \
     tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
-    fontforge gucharmap libnotify-dev lsp-plugins valgrind
+    fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev
 
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
