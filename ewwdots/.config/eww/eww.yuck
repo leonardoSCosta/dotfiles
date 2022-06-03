@@ -1,0 +1,18 @@
+(defwidget greeter [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+    text
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "Greet")))
+
+(defwindow calendar
+           :monitor 0
+           :geometry (geometry :x "0%" :y "40px"
+                               :width "10%"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "0px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+           (calendar)
+)

@@ -1,0 +1,31 @@
+* {
+    all: unset;
+}
+
+$color0: #FFFFFF;
+$color1: #363949;
+$color2: #BD93F9;
+$color3: #50FA7B;
+$color4: #FFB86C;
+$color5: #FF5555;
+$color6: #282A36;
+$color7: #8BE9FD;
+
+.calendar {
+    background-color: $color1;
+    color: $color0;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: $color7;
+    .header {
+        margin-left: 5px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .calendar:selected{
+        background-color: $color2;
+        color: $color6;
+    }
+}

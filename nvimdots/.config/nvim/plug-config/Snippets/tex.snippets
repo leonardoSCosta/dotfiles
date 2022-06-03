@@ -54,20 +54,19 @@
 
 global !p
 def math():
-	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
 def comment():
-	return vim.eval('vimtex#syntax#in_comment()') == '1'
+    return vim.eval('vimtex#syntax#in_comment()') == '1'
 
 def env(name):
-	[x, y] = vim.eval("vimtex#env#is_inside('" + name + "')")
-	return x != '0' and y != '0'
-
+    [x, y] = vim.eval("vimtex#env#is_inside('" + name + "')")
+    return x != '0' and y != '0'
 endglobal
 
 snippet "beg" "begin{} \n end{}" b
 \begin{$1}
-	$0
+    $0
 \end{$1}
 endsnippet
 
@@ -142,7 +141,7 @@ endsnippet
 
 context "math()"
 snippet 'xx' "Inserir \times" iA
-\times $0
+ \times $0
 endsnippet
 
 context "math()"
@@ -231,52 +230,64 @@ snippet "i$" "Inserir math" iA
 \$$1\$ $0
 endsnippet
 
-snippet "fbf" "Inserir texto em negrito" riA
+snippet "iin" "Inserir texto em negrito" iA
 \textbf{$1}$0
 endsnippet
 
-snippet "fit" "Inserir texto em itálico" riA
+snippet "iit" "Inserir texto em itálico" iA
 \textit{$1}$0
 endsnippet
 
 snippet "efi" "Inserir figura" bA
 \begin{figure}[!htb]
-	\centering
-	\caption{$1.}\label{fig:$2}
-	\includegraphics[width=\linewidth]{$3}
+    \centering
+    \caption{$1.}\label{fig:$2}
+    \includegraphics[width=\linewidth]{$3}
 \end{figure}
+endsnippet
+
+snippet "iac" "Inserir acrônimo" wiA
+\gls{$1} $0
+endsnippet
+
+snippet "tct" "Inserir textcite" wiA
+\textcite{$1} $0
+endsnippet
+
+snippet "ict" "Inserir cite" wiA
+~\cite{$1}$0
 endsnippet
 
 snippet "2efi" "Inserir duas figuras lado a lado" rA
 \begin{figure}[!htb]
-	\begin{minipage}{0.5\linewidth}
-		\centering
-		\caption{$1.}\label{fig:$2}
-		\includegraphics[width=\linewidth]{$3}
-		\end{minipage}%
-	\begin{minipage}{0.5\linewidth}
-		\centering
-		\caption{$4.}\label{fig:$5}
-		\includegraphics[width=\linewidth]{$6}
-	\end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \caption{$1.}\label{fig:$2}
+        \includegraphics[width=\linewidth]{$3}
+    \end{minipage}%
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \caption{$4.}\label{fig:$5}
+        \includegraphics[width=\linewidth]{$6}
+    \end{minipage}
 \end{figure}
 endsnippet
 
 snippet "eit" "Inserir itemize" bA
 \begin{itemize}
-	\item $0
+    \item $0
 \end{itemize}
 endsnippet
 
 snippet "eal" "Inserir equações alinhadas" bA
 \begin{align}
-	$1
+    $1
 \end{align}
 endsnippet
 
 snippet "eeq" "Inserir equação" bA
 \begin{equation}
-	$1
+    $1
 \end{equation}
 endsnippet
 
@@ -288,7 +299,7 @@ snippet "sec" "Inserir section" bA
 \section{$1}$0
 endsnippet
 
-snippet "s2s" "Inserir subsection" bA
+snippet "ssc" "Inserir subsection" bA
 \subsection{$1}$0
 endsnippet
 

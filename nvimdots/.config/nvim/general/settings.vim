@@ -12,14 +12,14 @@ set encoding=utf-8         " The encoding displayed
 set pumheight=10           " Makes pop-up menu smaller
 set fileencoding=utf-8     " The encoding written to file
 set ruler              	   " Show the cursor position all the time
-set iskeyword+=-           " treat dash separated words as a word text object"
+" set iskeyword+=-           " treat dash separated words as a word text object"
 set mouse=a                " Enable your mouse
 
 set splitbelow             " Horizontal splits will automatically be below
 set splitright             " Vertical splits will automatically be to the right
 
 set t_Co=256               " Support 256 colors
-set conceallevel=0         " So that I can see `` in markdown files
+set conceallevel=2         " So that I can see `` in markdown files
 
 set tabstop=4              " Insert 4 spaces for a tab
 set softtabstop=4

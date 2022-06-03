@@ -18,7 +18,7 @@ sudo apt install -y \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
     clang clangd fd-find asciidoctor neofetch meld kitty figlet lolcat \
     tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
-    fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev
+    fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow
 
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
@@ -188,16 +188,7 @@ sudo echo "options snd-hda-intel power_save=0 power_save_controller=N" >> /etc/m
 # setxkbmap
 
 # ============================================================================
+stow */
+mkdir -p ~/.config
 
-mkdir ~/.config/nvim
-
-# Copiando as configs
-mkdir -p ~/.config && touch ~/.config/starship.toml
-cd; cd my-vim-config
-mv starship.toml $HOME/.config/
-
-mkdir -p ~/.config/fish
-cp fish/config.fish ~/.config/fish/
-
-cp ./.vimrc ~/
 cp -rf ./Wallpapers ~/Imagens/

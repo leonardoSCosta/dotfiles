@@ -124,6 +124,9 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/plug-config/Snippets']
+
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
@@ -131,9 +134,11 @@ let g:netrw_winsize = 25
 " Configura o plugin do LaTeX
 " filetype plugin on
 " filetype indent on
-set conceallevel=1
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
+" let g:vimtex_view_general_viewer = 'okular'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+" let g:vimtex_view_general_options_latexmk = '--unique'
 let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
 

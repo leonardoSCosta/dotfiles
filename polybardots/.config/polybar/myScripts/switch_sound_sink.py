@@ -39,11 +39,17 @@ SOUND_BOX_STR = "HDA NVidia"
 SOUND_BOX_INDEX = -1
 SOUND_BOX_ICON = ICON_PATH + "org.gnome.Rhythmbox.svg"
 
+DEFAULT_STR = "Áudio interno Estéreo analógico"
+DEFAULT_INDEX = -1
+DEFAULT_ICON = SOUND_BOX_ICON
+
 for n, sink in enumerate(sinks):
     if HEADSET_STR in sink.description:
         HEADSET_INDEX = n
     elif SOUND_BOX_STR in sink.description:
         SOUND_BOX_INDEX = n
+    elif DEFAULT_STR in sink.description:
+        DEFAULT_INDEX = n
 
 print("H {} | B {}".format(HEADSET, SOUND_BOX))
 
@@ -60,10 +66,19 @@ elif SOUND_BOX and SOUND_BOX_INDEX != -1:
     print(pulse.server_info().default_sink_name)
     notification = Notify.Notification.new("Sink Changed", "Sound Box",
                                            SOUND_BOX_ICON)
+elif DEFAULT_STR != -1:
+    print("Set", DEFAULT_STR)
+    pulse.default_set(sinks[DEFAULT_INDEX])
+    print(pulse.server_info().default_sink_name)
+    notification = Notify.Notification.new("Sink Not Found", "Using Default",
+                                           DEFAULT_ICON)
+    notification.set_urgency(1)
+
 else:
     print("Sink not found")
     notification = Notify.Notification.new("Sink Change Error",
-                                           "Sink Not Found")
+                                           "Sink Not Found",
+                                           SOUND_BOX_ICON)
     notification.set_urgency(2)
 
 notification.show()
