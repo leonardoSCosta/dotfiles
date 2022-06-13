@@ -6,12 +6,18 @@ killall -q polybar;
 # polybar-msg cmd quit
 
 count=0;
+# BARS=("fullbar" "secondarybar");
 BARS=("primarybar" "secondarybar");
+EXTRA_BARS=("primarybar_mid");
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     if  [ $count -lt 2 ];  then
         MONITOR=$m polybar -r ${BARS[count]} 2>&1 | tee -a /tmp/polybar$count.log & disown
+        if [ $count -eq 0 ];  then
+            MONITOR=$m polybar -r ${EXTRA_BARS[count]} 2>&1 | tee -a /tmp/polybar_extra$count.log & disown
+        fi
+
         let "count = count+1"
     fi
   done
