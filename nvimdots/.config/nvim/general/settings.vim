@@ -59,10 +59,9 @@ set clipboard=unnamedplus  " Copy paste between Vim and everything else
 
 autocmd FileType tex setlocal spell
 autocmd FileType tex set spelllang=pt,en
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-autocmd FileType c inoremap {{ <Enter>{<Enter>}<Esc>O
-autocmd FileType cpp inoremap {{ <Enter>{<Enter>}<Esc>O
+" Auto fix words
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 set sessionoptions-=blank
 
