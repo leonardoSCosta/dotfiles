@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins de temas de cor
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chrisbra/colorizer'
 Plug 'junegunn/rainbow_parentheses.vim'
 
@@ -57,6 +58,7 @@ Plug 'airblade/vim-gitgutter'
 " Outros
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
+Plug 'andweeb/presence.nvim'
 
 call plug#end()
 
@@ -105,16 +107,21 @@ let g:airline_symbols.notexists = 'Ɇ'
 
 set laststatus=1
 
+" Example config in VimScript
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+let g:tokyonight_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000'
+\ }
+
 " Configuração do esquema de cores
 set background=dark
 colorscheme dracula
-
-if g:colors_name == 'nord'
-    let g:nord_bold_vertical_split_line=1
-    let g:nord_italic=1
-    let g:nord_italic_comments=1
-    let g:nord_uniform_diff_background = 1
-endif
+" colorscheme tokyonight
 
 set termguicolors
 
@@ -166,5 +173,13 @@ let g:syntastic_loc_list_height = 3
 
 " C, C++, etc LSP
 let g:lsp_cxx_hl_use_text_props = 1
+
+" Neovim Presence
+let g:presence_auto_update         = 1
+let g:presence_buttons             = 0
+let g:presence_enable_line_number  = 1
+" Rich Presence text options
+let g:presence_editing_text        = "Editing %s"
+let g:presence_line_number_text    = "Line %s out of %s"
 
 set winaltkeys=no

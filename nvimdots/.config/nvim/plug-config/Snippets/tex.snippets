@@ -85,12 +85,12 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 endsnippet
 
 context "math()"
-snippet '((' "auto \left( \right)" iA
+snippet (( "auto \left( \right)" iA
 \left( $0 \right)
 endsnippet
 
 context "math()"
-snippet '[[' "auto \left[ \right]" iA
+snippet [[ "auto \left[ \right]" iA
 \left[ $0 \right]
 endsnippet
 
@@ -140,12 +140,12 @@ snippet <- "Inserir seta para esquerda" iA
 endsnippet
 
 context "math()"
-snippet 'xx' "Inserir \times" iA
+snippet xx "Inserir \times" iA
  \times $0
 endsnippet
 
 context "math()"
-snippet '...' "Inserir \cdots" iA
+snippet ... "Inserir \cdots" iA
 \cdots $0
 endsnippet
 
@@ -240,11 +240,11 @@ snippet "iin" "Inserir texto em negrito" iA
 \textbf{$1}$0
 endsnippet
 
-snippet "iit" "Inserir texto em itálico" iA
+snippet iit "Inserir texto em itálico" iA
 \textit{$1}$0
 endsnippet
 
-snippet "EFI" "Inserir figura" bA
+snippet "EFI" "Inserir figura" rbA
 \begin{figure}[!htb]
     \centering
     \caption{$1.}\label{fig:$2}

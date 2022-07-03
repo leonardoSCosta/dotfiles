@@ -1,21 +1,30 @@
 #!/usr/bin/bash
 
 # Terminate already running bar instances
-killall -q polybar;
+# killall -q polybar;
 # If all your bars have ipc enabled, you can also use
-# polybar-msg cmd quit
+polybar-msg cmd quit
 
 count=0;
-# BARS=("fullbar" "secondarybar");
-BARS=("primarybar" "secondarybar");
-EXTRA_BARS=("primarybar_mid");
+monitor_count=0;
+
+BARS=("fullbar" "secondarybar");
+
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    let "monitor_count = monitor_count+1"
+done
+
+if [ $monitor_count -gt 1 ]; then
+    BARS=("primarybar" "secondarybar");
+    EXTRA_BARS=("primarybar_mid");
+fi
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     if  [ $count -lt 2 ];  then
         MONITOR=$m polybar -r ${BARS[count]} 2>&1 | tee -a /tmp/polybar$count.log & disown
         if [ $count -eq 0 ];  then
-            MONITOR=$m polybar -r ${EXTRA_BARS[count]} 2>&1 | tee -a /tmp/polybar_extra$count.log & disown
+            MONITOR=$m polybar -r ${EXTRA_BARS[count - 1]} 2>&1 | tee -a /tmp/polybar_extra$count.log & disown
         fi
 
         let "count = count+1"
@@ -35,3 +44,6 @@ echo "Bars launched..."
 # Reset eww
 eww kill
 eww daemon
+
+# run feh
+./.fehbg

@@ -155,3 +155,5 @@ end
 function prepend_n
     mv $argv[1] $argv[2]_$argv[1]
 end
+
+abbr -a -g cvim vim ~/.vimrc
