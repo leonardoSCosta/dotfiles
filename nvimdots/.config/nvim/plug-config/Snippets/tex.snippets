@@ -64,13 +64,13 @@ def env(name):
     return x != '0' and y != '0'
 endglobal
 
-snippet "BEG" "begin{} \n end{}" bA
+snippet BEG "begin{} \n end{}" bA
 \begin{$1}
     $0
 \end{$1}
 endsnippet
 
-snippet "beg" "begin{} ... end{}" iA
+snippet beg "begin{} ... end{}" iA
 \begin{$1} $0 \end{$1}
 endsnippet
 
@@ -232,11 +232,11 @@ snippet '...' "Inserir \ldots" iA
 \ldots $0
 endsnippet
 
-snippet "i$" "Inserir math" iA
+snippet i$ "Inserir math" A
 \$$1\$ $0
 endsnippet
 
-snippet "iin" "Inserir texto em negrito" iA
+snippet iin "Inserir texto em negrito" iA
 \textbf{$1}$0
 endsnippet
 
@@ -266,15 +266,15 @@ snippet "ETA" "Inserir tabela" bA
 \end{table}$0
 endsnippet
 
-snippet "IAC" "Inserir acrônimo" wiA
+snippet IAC "Inserir acrônimo" wiA
 \gls{$1} $0
 endsnippet
 
-snippet "TCT" "Inserir textcite" wiA
+snippet TCT "Inserir textcite" wiA
 \textcite{$1} $0
 endsnippet
 
-snippet "ICT" "Inserir cite" wiA
+snippet ICT "Inserir cite" wiA
 ~\cite{$1}$0
 endsnippet
 
@@ -293,37 +293,37 @@ snippet "2EFI" "Inserir duas figuras lado a lado" rA
 \end{figure}
 endsnippet
 
-snippet "EIT" "Inserir itemize" bA
+snippet EIT "Inserir itemize" bA
 \begin{itemize}
     \item $0
 \end{itemize}
 endsnippet
 
-snippet "EAL" "Inserir equações alinhadas" bA
+snippet EAL "Inserir equações alinhadas" bA
 \begin{align}
     $1
 \end{align}
 endsnippet
 
-snippet "EEQ" "Inserir equação" bA
+snippet EEQ "Inserir equação" bA
 \begin{equation}
     $1
 \end{equation}
 endsnippet
 
-snippet "SCH" "Inserir chapter" bA
+snippet SCH "Inserir chapter" bA
 \chapter{$1}$0
 endsnippet
 
-snippet "SEC" "Inserir section" bA
+snippet SEC "Inserir section" bA
 \section{$1}$0
 endsnippet
 
-snippet "SSC" "Inserir subsection" bA
+snippet SSC "Inserir subsection" bA
 \subsection{$1}$0
 endsnippet
 
-snippet "SSS" "Inserir subsubsection" bA
+snippet SSS "Inserir subsubsection" bA
 \subsubsection{$1}$0
 endsnippet
 
