@@ -1,6 +1,6 @@
 starship init fish | source
-export PATH="PATH=$PATH:$PATH=PATH=$PATH:$HOME/.cargo/bin"
 export "BAT_THEME=Dracula"
+export "EDITOR=nvim"
 
 alias grsim=~/SSL/grSim/bin/grSim
 alias tempo=~/.weather
@@ -121,30 +121,29 @@ function set_tiling
 end
 
 function clean_latex
-    rm *.xmpi
-    rm *.aux
-    rm *.bbl
-    rm *.bcf
-    rm *.blg
-    rm *.idx
-    rm *.lof
-    rm *.log
-    rm *.lot
-    rm *.mw
-    rm *.out
-    rm *.pdf
-    rm *.run.xml
-    rm *.synctex.gz
-    rm *.toc
-    rm *.xdy
-    rm *.alg
-    rm *.fdb_latexmk
-    rm *.fls
-    rm *.ilg
-    rm *.ind
+    rm -f *.xmpi
+    rm -f *.aux
+    rm -f *.bbl
+    rm -f *.bcf
+    rm -f *.blg
+    rm -f *.idx
+    rm -f *.lof
+    rm -f *.log
+    rm -f *.lot
+    rm -f *.mw
+    rm -f *.out
+    rm -f *.run.xml
+    rm -f *.synctex.gz
+    rm -f *.toc
+    rm -f *.xdy
+    rm -f *.alg
+    rm -f *.fdb_latexmk
+    rm -f *.fls
+    rm -f *.ilg
+    rm -f *.ind
 
-    rm ./pre-textuais/*.aux
-    rm ./textuais/*.aux
+    rm -f ./pre-textuais/*.aux
+    rm -f ./textuais/*.aux
 end
 
 function setup_webots

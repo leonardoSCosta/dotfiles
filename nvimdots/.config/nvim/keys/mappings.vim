@@ -21,7 +21,7 @@ vnoremap Q gq
 nnoremap Q gqap
 
 " Salvar mais rápido
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :wall<CR>
 
 " Contar número de palavras no parágrafo
 nnoremap <leader>tc vipg<C-g><Esc>

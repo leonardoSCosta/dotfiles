@@ -24,9 +24,12 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Plugins de navegação
 Plug 'justinmk/vim-sneak'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'stsewd/fzf-checkout.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'stsewd/fzf-checkout.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'jremmen/vim-ripgrep'
 
 " Plugins para LaTeX
@@ -46,6 +49,7 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
 Plug 'vim-syntastic/syntastic'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -68,8 +72,13 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 " Atalho para dar checkout no repositório atual
 nnoremap <C-c>b :GBranches<CR>
+
 " Atalho para abrir o FZF
-nnoremap <C-p> :FZF<Enter>
+" nnoremap <C-p> :FZF<Enter>
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Configura o plugin sneak
 let g:sneak#label = 1
@@ -173,6 +182,13 @@ let g:syntastic_loc_list_height = 3
 
 " C, C++, etc LSP
 let g:lsp_cxx_hl_use_text_props = 1
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
 
 " Neovim Presence
 let g:presence_auto_update         = 1

@@ -19,7 +19,8 @@ sudo apt install -y \
     clang clangd fd-find asciidoctor neofetch meld kitty figlet lolcat \
     tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
     fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow \
-    fzf libdlib-dev libopenblas-dev liblapack-dev
+    fzf libdlib-dev libopenblas-dev liblapack-dev libx11-dev libxpm-dev \
+    xscreensaver
 
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
@@ -60,8 +61,8 @@ gsettings set org.gnome.desktop.interface icon-theme \'Flatery-Dark\'
 wget https://github.com/dracula/gtk/archive/master.zip
 mkdir $HOME/.themes
 unzip master.zip -d ~/.themes/
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula-GTK"
-gsettings set org.gnome.desktop.wm.preferences theme "Dracula-GTK"
+gsettings set org.gnome.desktop.interface gtk-theme "gtk-master"
+gsettings set org.gnome.desktop.wm.preferences theme "gtk-master"
 
 # Tema do zathura
 git clone https://github.com/dracula/zathura ~/.config/zathura/
