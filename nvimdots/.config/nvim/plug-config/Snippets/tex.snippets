@@ -139,7 +139,7 @@ snippet <- "Inserir seta para esquerda" iA
 \leftarrow $0
 endsnippet
 
-context "math()"
+context "env('math')"
 snippet xx "Inserir \times" iA
  \times $0
 endsnippet
@@ -149,31 +149,37 @@ snippet ... "Inserir \cdots" iA
 \cdots $0
 endsnippet
 
-context "env('math')"
+context "math()"
+priority 10
+snippet iin "Inserir texto em negrito" iA
+\mathbf{$1}$0
+endsnippet
+
+context "math()"
 priority 10
 snippet "bar" "bar" riA
 \overline{$1}$0
 endsnippet
 
-context "env('math')"
+context "math()"
 priority 100
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
-context "env('math')"
+context "math()"
 priority 100
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-context "env('math')"
+context "math()"
 priority 10
 snippet "vec" "vec" riA
 \vec{$1}$0
 endsnippet
 
-context "env('math')"
+context "math()"
 priority 100
 snippet "([a-zA-Z])vec" "vec" riA
 \vec{`!p snip.rv=match.group(1)`}
@@ -236,6 +242,7 @@ snippet i$ "Inserir math" iA
 \$$1\$ $0
 endsnippet
 
+priority 100
 snippet iin "Inserir texto em negrito" iA
 \textbf{$1}$0
 endsnippet

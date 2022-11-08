@@ -75,7 +75,7 @@ nnoremap <C-c>b :GBranches<CR>
 
 " Atalho para abrir o FZF
 " nnoremap <C-p> :FZF<Enter>
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-p> <cmd>Telescope find_files hidden=true follow=true<cr>
 " nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " nnoremap <leader>fh <cmd>Telescope help_tags<cr>

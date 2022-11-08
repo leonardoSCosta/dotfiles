@@ -7,6 +7,12 @@ git init
 touch .gitignore
 git add --all
 git commit -m "Initial commit"
-git remote add origin git@gitlab.com:leo_costa/<nome do projeto>
+
+# Via SSH
+# git remote add origin git@gitlab.com:leo_costa/<nome do projeto>
+
+# Via HTTPS
+# git remote add origin https://gitlab.com/<usuario>/<nome do projeto>.git
+
 git push -u origin master
 ```
