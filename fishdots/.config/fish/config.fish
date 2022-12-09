@@ -23,6 +23,7 @@ alias list_terminals='sudo update-alternatives --config x-terminal-emulator'
 alias clock="tty-clock -s -c -C5 -r"
 alias toggle_notifs="dunstctl set-paused toggle; echo 'Notifications paused ?'; dunstctl is-paused"
 alias lg='git status'
+alias update='sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt autoremove -y'
 
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/

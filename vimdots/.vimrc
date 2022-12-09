@@ -68,17 +68,18 @@ call plug#end()
 
 
 " Configura o FZF
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-" Atalho para dar checkout no repositório atual
-nnoremap <C-c>b :GBranches<CR>
-
+" let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+" let $FZF_DEFAULT_OPTS='--reverse'
 " Atalho para abrir o FZF
 " nnoremap <C-p> :FZF<Enter>
-nnoremap <C-p> <cmd>Telescope find_files hidden=true follow=true<cr>
 " nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Configura o Telescope
+" Atalho para dar checkout no repositório atual
+nnoremap <C-c>b <cmd>Telescope git_branches<cr>
+nnoremap <C-p> <cmd>Telescope find_files hidden=true follow=true<cr>
 
 " Configura o plugin sneak
 let g:sneak#label = 1
@@ -134,12 +135,11 @@ colorscheme dracula
 
 set termguicolors
 
-let g:colorizer_auto_filetype='cpp,h,vim,tex,markdown,dosini'
+let g:colorizer_auto_filetype='cpp,h,vim,tex,markdown,dosini,c'
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/plug-config/Snippets']
 
