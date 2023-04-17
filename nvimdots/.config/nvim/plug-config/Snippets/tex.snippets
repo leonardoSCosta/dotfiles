@@ -95,6 +95,16 @@ snippet [[ "auto \left[ \right]" iA
 endsnippet
 
 context "math()"
+snippet {{ "auto \{ \}" iA
+\\{ $0 \\}
+endsnippet
+
+context "math()"
+snippet MC "Inserir \mathcal" iA
+\mathcal{$1}$0
+endsnippet
+
+context "math()"
 snippet // "auto frac" iA
 \\frac{$1}{$2}$0
 endsnippet
@@ -125,12 +135,12 @@ snippet >= "Inserir maior igual" iA
 endsnippet
 
 context "math()"
-snippet '->' "Inserir seta para direita" iA
+snippet -> "Inserir seta para direita" iA
 \rightarrow $0
 endsnippet
 
 context "math()"
-snippet '-x' "Inserir seta para direita com texto" iA
+snippet -x "Inserir seta para direita com texto" iA
 \xrightarrow{$1} $0
 endsnippet
 
@@ -139,18 +149,23 @@ snippet <- "Inserir seta para esquerda" iA
 \leftarrow $0
 endsnippet
 
-context "env('math')"
+context "math()"
 snippet xx "Inserir \times" iA
  \times $0
 endsnippet
 
 context "math()"
-snippet ... "Inserir \cdots" iA
-\cdots $0
+snippet ... "Inserir \ldots" iA
+\ldots $0
 endsnippet
 
 context "math()"
-priority 10
+snippet ttt "Inserir text" iA
+\text{$1}$0
+endsnippet
+
+context "math()"
+priority 100
 snippet iin "Inserir texto em negrito" iA
 \mathbf{$1}$0
 endsnippet
@@ -205,32 +220,42 @@ endsnippet
 # endsnippet
 
 context "env('figure')"
-snippet "llb" "Inserir label" wrA
+snippet llb "Inserir label" wA
 \label{fig:$1}$0
 endsnippet
 
 context "env('table')"
-snippet "llb" "Inserir label" wrA
+snippet llb "Inserir label" wA
 \label{tb:$1}$0
 endsnippet
 
+context "env('table')"
+snippet imc "Inserir multicolumn" wA
+\multicolumn{${1:ncols}}{${2:aligncol}}{${3:text}}$0
+endsnippet
+
+context "env('table')"
+snippet imr "Inserir multirow" wA
+\multirow{${1:nrows}}{*}{${3:text}}$0
+endsnippet
+
 context "env('equation')"
-snippet "llb" "Inserir label" wrA
+snippet llb "Inserir label" wA
 \label{eq:$1}$0
 endsnippet
 
 context "env('align')"
-snippet "llb" "Inserir label" wrA
+snippet llb "Inserir label" wA
 \label{eq:$1}$0
 endsnippet
 
 context "env('itemize')"
-snippet "IT" "Inserir \item" bA
+snippet IT "Inserir \item" bA
 \item $0
 endsnippet
 
 context "env('enumerate')"
-snippet "IT" "Inserir \item" bA
+snippet IT "Inserir \item" bA
 \item $0
 endsnippet
 
@@ -239,10 +264,10 @@ snippet '...' "Inserir \ldots" iA
 endsnippet
 
 snippet i$ "Inserir math" iA
-\$$1\$ $0
+\$$1\$$0
 endsnippet
 
-priority 100
+priority 10
 snippet iin "Inserir texto em negrito" iA
 \textbf{$1}$0
 endsnippet
@@ -251,7 +276,7 @@ snippet iit "Inserir texto em itálico" iA
 \textit{$1}$0
 endsnippet
 
-snippet "EFI" "Inserir figura" rbA
+snippet EFI "Inserir figura" bA
 \begin{figure}[!htb]
     \centering
     \caption{$1.}\label{fig:$2}
@@ -259,13 +284,13 @@ snippet "EFI" "Inserir figura" rbA
 \end{figure}
 endsnippet
 
-snippet "ETA" "Inserir tabela" rbA
+snippet ETA "Inserir tabela" bA
 \begin{table}[!htb]
     \centering
     \caption{$1.}\label{tbl:$2}
     \begin{tabular}{$3}
         \toprule
-        $4\\
+        $4\\\\
         \toprule
         \\
         \bottomrule
@@ -285,19 +310,28 @@ snippet ICT "Inserir cite" wiA
 ~\cite{$1}$0
 endsnippet
 
-snippet "2EFI" "Inserir duas figuras lado a lado" rA
+snippet 2EFI "Inserir duas figuras lado a lado" bA
 \begin{figure}[!htb]
-    \begin{minipage}{0.5\linewidth}
+    \begin{minipage}[t]{0.5\linewidth}
         \centering
         \caption{$1.}\label{fig:$2}
         \includegraphics[width=\linewidth]{$3}
     \end{minipage}%
-    \begin{minipage}{0.5\linewidth}
+    \begin{minipage}[t]{0.5\linewidth}
         \centering
         \caption{$4.}\label{fig:$5}
         \includegraphics[width=\linewidth]{$6}
     \end{minipage}
 \end{figure}
+endsnippet
+
+snippet 2MIN "Inserir dois minipages lado a lado" bA
+\begin{minipage}[t]{0.5\linewidth}
+
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+
+\end{minipage}
 endsnippet
 
 snippet EIT "Inserir itemize" bA
@@ -334,18 +368,18 @@ snippet SSS "Inserir subsubsection" bA
 \subsubsection{$1}$0
 endsnippet
 
-snippet "refQ" "Inserir referência à equação" riA
+snippet refQ "Inserir referência à equação" iA
 ~\eqref{eq:$1}$0
 endsnippet
 
-snippet "refF" "Inserir referência à figura" riA
+snippet refF "Inserir referência à figura" iA
 ~\ref{fig:$1}$0
 endsnippet
 
-snippet "refT" "Inserir referência à tabela" riA
+snippet refT "Inserir referência à tabela" iA
 ~\ref{tbl:$1}$0
 endsnippet
 
-snippet "IQ" "Inserir aspas" riA
+snippet IQ "Inserir aspas" iA
 \`\`$1'' $0
 endsnippet

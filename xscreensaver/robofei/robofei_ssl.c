@@ -19,7 +19,7 @@
 
 #define OFFSET 100
 #define CENTER_CIRCLE 200
-#define TEAM_SIZE 11
+#define TEAM_SIZE 6
 #define ROBOT_RADIUS 60
 
 Display *display;
@@ -44,14 +44,15 @@ typedef struct
 #define ID_3  {.color0 = PINK,        .color1 = LIGHT_GREEN, .color2 = LIGHT_GREEN, .color3 = PINK}
 #define ID_4  {.color0 = PINK,        .color1 = PINK,        .color2 = PINK,        .color3 = LIGHT_GREEN}
 #define ID_5  {.color0 = LIGHT_GREEN, .color1 = PINK,        .color2 = PINK,        .color3 = LIGHT_GREEN}
-#define ID_6  {.color0 = LIGHT_GREEN, .color1 = LIGHT_GREEN, .color2 = PINK,        .color3 = LIGHT_GREEN}
-#define ID_7  {.color0 = PINK,        .color1 = LIGHT_GREEN, .color2 = PINK,        .color3 = LIGHT_GREEN}
-#define ID_8  {.color0 = LIGHT_GREEN, .color1 = LIGHT_GREEN, .color2 = LIGHT_GREEN, .color3 = LIGHT_GREEN}
-#define ID_9  {.color0 = PINK,        .color1 = PINK,        .color2 = PINK,        .color3 = PINK}
-#define ID_10 {.color0 = PINK,        .color1 = PINK,        .color2 = LIGHT_GREEN, .color3 = LIGHT_GREEN}
+// #define ID_6  {.color0 = LIGHT_GREEN, .color1 = LIGHT_GREEN, .color2 = PINK,        .color3 = LIGHT_GREEN}
+// #define ID_7  {.color0 = PINK,        .color1 = LIGHT_GREEN, .color2 = PINK,        .color3 = LIGHT_GREEN}
+// #define ID_8  {.color0 = LIGHT_GREEN, .color1 = LIGHT_GREEN, .color2 = LIGHT_GREEN, .color3 = LIGHT_GREEN}
+// #define ID_9  {.color0 = PINK,        .color1 = PINK,        .color2 = PINK,        .color3 = PINK}
+// #define ID_10 {.color0 = PINK,        .color1 = PINK,        .color2 = LIGHT_GREEN, .color3 = LIGHT_GREEN}
 
-ID robotIDs[TEAM_SIZE] = { ID_0, ID_1, ID_2, ID_3, ID_4, ID_5, ID_6, ID_7,
-                           ID_8, ID_9, ID_10 };
+ID robotIDs[TEAM_SIZE] = { ID_0, ID_1, ID_2, ID_3, ID_4, ID_5 };
+// ID robotIDs[TEAM_SIZE] = { ID_0, ID_1, ID_2, ID_3, ID_4, ID_5, ID_6, ID_7,
+//                            ID_8, ID_9, ID_10 };
 
 void setColor(int colorIndex)
 {
@@ -90,15 +91,15 @@ typedef struct
 ROBOT teamBlue[TEAM_SIZE] = {
                              BLUE_ROBOT, BLUE_ROBOT, BLUE_ROBOT,
                              BLUE_ROBOT, BLUE_ROBOT, BLUE_ROBOT,
-                             BLUE_ROBOT, BLUE_ROBOT, BLUE_ROBOT,
-                             BLUE_ROBOT, BLUE_ROBOT
+//                              BLUE_ROBOT, BLUE_ROBOT, BLUE_ROBOT,
+//                              BLUE_ROBOT, BLUE_ROBOT
                             },
-      teamYellow[TEAM_SIZE] = {
-                               YELLOW_ROBOT,YELLOW_ROBOT,YELLOW_ROBOT,
-                               YELLOW_ROBOT, YELLOW_ROBOT, YELLOW_ROBOT,
-                               YELLOW_ROBOT,YELLOW_ROBOT,YELLOW_ROBOT,
-                               YELLOW_ROBOT, YELLOW_ROBOT
-                               };
+teamYellow[TEAM_SIZE] = {
+                       YELLOW_ROBOT,YELLOW_ROBOT,YELLOW_ROBOT,
+                       YELLOW_ROBOT, YELLOW_ROBOT, YELLOW_ROBOT,
+//                        YELLOW_ROBOT,YELLOW_ROBOT,YELLOW_ROBOT,
+//                        YELLOW_ROBOT, YELLOW_ROBOT
+                       };
 
 float distance(const ROBOT *_A, const ROBOT *_B)
 {

@@ -262,7 +262,7 @@ awful.screen.connect_for_each_screen(function(s)
     })
 
 
-    mytextclock:connect_signal("button::press", 
+    mytextclock:connect_signal("button::press",
         function(_, _, _, button)
             if button == 1 then cw.toggle() end
         end)
@@ -275,7 +275,7 @@ awful.screen.connect_for_each_screen(function(s)
         --cr:line_to(0,height)
         --cr:close_path()
     --end
-    s.mywibox  = awful.wibar({position = "top", 
+    s.mywibox  = awful.wibar({position = "top",
                               screen = s})
                               --shape = gears.shape.rounded_bar})
     -- Add widgets to the wibox
@@ -485,22 +485,22 @@ clientkeys = gears.table.join(
         end ,
         {description = "(un)maximize horizontally", group = "client"}),
 
-    awful.key({ modkey         }, ";", 
-        function () 
-            awful.spawn("light -A 5") 
+    awful.key({ modkey         }, ";",
+        function ()
+            awful.spawn("light -A 5")
         end,
         {description = "increase brightness", group = "custom"}),
 
-    awful.key({ modkey, "Shift"}, ";", 
-        function () 
-            awful.spawn("light -U 5") 
-        end, 
+    awful.key({ modkey, "Shift"}, ";",
+        function ()
+            awful.spawn("light -U 5")
+        end,
         {description = "decrease brightness", group = "custom"}),
-        
-    awful.key({ modkey, "Shift"}, "g", 
-        function () 
-            awful.spawn("gsettings reset org.gnome.ControlCenter last-panel") 
-        end, 
+
+    awful.key({ modkey, "Shift"}, "g",
+        function ()
+            awful.spawn("gsettings reset org.gnome.ControlCenter last-panel")
+        end,
         {description = "Reset Gnome Controller", group = "custom"})
 )
 
@@ -637,13 +637,13 @@ awful.rules.rules = {
             --client:emit_signal("request::titlebars", "rules", {})
         --end
         --awful.titlebar.show(client)
-    --else 
+    --else
         --awful.titlebar.hide(client)
     --end
 --end
 ---- Show titlebars on tags with the floating layout
 --tag.connect_signal("property::layout", function(t)
-    ---- New to Lua ? 
+    ---- New to Lua ?
     ---- pairs iterates on the table and return a key value pair
     ---- I don't need the key here, so I put _ to ignore it
     --for _, c in pairs(t:clients()) do

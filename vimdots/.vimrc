@@ -50,6 +50,10 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dag/vim-fish'
 Plug 'vim-syntastic/syntastic'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'neovim/nvim-lspconfig'
+Plug 'fannheyward/coc-texlab'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 " Plugin para comentar as linhas
 Plug 'preservim/nerdcommenter'
@@ -113,7 +117,7 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#coc#error_symbol = ' '
-let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.notexists = ' Ɇ'
 
 set laststatus=1
 
@@ -199,3 +203,49 @@ let g:presence_editing_text        = "Editing %s"
 let g:presence_line_number_text    = "Line %s out of %s"
 
 set winaltkeys=no
+
+let g:texlab_path = "/home/leonardo/.cargo/bin/texlab"
+
+" highlight misspelled words in red
+hi SpellBad cterm=underline guifg=Red
+
+
+if exists("g:neovide")
+" Put anything you want to happen only in Neovide here
+set guifont=JetBrainsMono_Nerd_Font_Mono:h9:#h-none:#e-subpixelantialias
+
+" Muda o tamanho da fonte
+let g:neovide_scale_factor = 1
+function! ChangeScaleFactor(delta)
+    let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+endfunction
+nnoremap <expr><C-=> ChangeScaleFactor(1.25)
+nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
+
+" Set transparency and background color (title bar color)
+let g:neovide_transparency=0.97
+let g:neovide_transparency_point=0.8
+let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:neovide_transparency_point))
+
+" Add keybinds to change transparency
+function! ChangeTransparency(delta)
+  let g:neovide_transparency_point = g:neovide_transparency_point + a:delta
+  let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:neovide_transparency_point))
+endfunction
+
+noremap <expr><D-]> ChangeTransparency(0.10)
+noremap <expr><D-[> ChangeTransparency(-0.10)
+
+let g:neovide_floating_blur_amount_x = 2.0
+let g:neovide_floating_blur_amount_y = 2.0
+
+let g:neovide_refresh_rate = 60
+let g:neovide_refresh_rate_idle = 1
+let g:neovide_remember_window_size = v:true
+let g:neovide_profiler = v:false " Gráfico de FPS
+" let g:neovide_scroll_animation_length = 0.3
+
+let g:neovide_cursor_trail_size = 0.7
+let g:neovide_cursor_vfx_mode = "torpedo"
+
+endif

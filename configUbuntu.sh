@@ -20,8 +20,9 @@ sudo apt install -y \
     tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
     fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow \
     fzf libdlib-dev libopenblas-dev liblapack-dev libx11-dev libxpm-dev \
-    xscreensaver
+    xscreensaver awesome arandr lxappearance
 
+pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
 
@@ -31,6 +32,7 @@ sudo gem install asciidoctor-pdf
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install exa
+# cargo install --git https://github.com/neovide/neovide
 # cargo install dust # Não funciona no ubuntu 20.04
 
 # Importante para gerar o arquivo de database de compilação na mão (compile_commands.json)

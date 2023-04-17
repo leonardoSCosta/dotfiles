@@ -1,13 +1,16 @@
 starship init fish | source
 export "BAT_THEME=Dracula"
 export "EDITOR=nvim"
+# export "EDITOR=neovide --multigrid"
 
-alias grsim=~/SSL/grSim/bin/grSim
+# alias grsim=~/SSL/grSim/bin/grSim
 alias tempo=~/.weather
 alias cleanJournal=~/.cleanJournal
 alias refbox=~/.refbox
 alias vim=nvim
-alias vi=nvim
+# alias vi=nvim
+# alias vim="neovide --multigrid"
+# alias vi="neovide --multigrid"
 alias python=python3
 alias connectLARC=~/connectLARC
 alias connectRoot=~/connectRoot
@@ -15,7 +18,7 @@ alias gamecontroller=~/SSL/ssl-game-controller_v2.0.0-rc3_linux_amd64
 alias stmide=~/st/stm32cubeide_1.5.0/stm32cubeide
 alias stmmx=~/STM32CubeMX/STM32CubeMX
 alias pip=pip3
-alias matlab=~/MATLAB/R2020b/bin/matlab
+# alias matlab=~/MATLAB/R2020b/bin/matlab
 alias fd=fdfind
 alias icat="kitty +kitten icat --align left"
 alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
@@ -24,6 +27,8 @@ alias clock="tty-clock -s -c -C5 -r"
 alias toggle_notifs="dunstctl set-paused toggle; echo 'Notifications paused ?'; dunstctl is-paused"
 alias lg='git status'
 alias update='sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt autoremove -y'
+alias spotify_inc_volume="playerctl -p spotify volume | xargs -I '{}' echo {}+0.1 | math | xargs -I '{}' playerctl -p spotify volume {}"
+alias spotify_dec_volume="playerctl -p spotify volume | xargs -I '{}' echo {}-0.1 | math | xargs -I '{}' playerctl -p spotify volume {}"
 
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -66,7 +71,8 @@ function cheat
 end
 
 function fish_greeting
-    colorscript -r
+#     colorscript -r
+    please
 end
 
 function bit
@@ -156,4 +162,5 @@ function prepend_n
     mv $argv[1] $argv[2]_$argv[1]
 end
 
-abbr -a -g cvim vim ~/.vimrc
+abbr -a -g cvim nvim ~/.vimrc
+# abbr -a -g cvim neovide --multigrid ~/.vimrc
