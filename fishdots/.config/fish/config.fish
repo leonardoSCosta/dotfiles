@@ -162,5 +162,10 @@ function prepend_n
     mv $argv[1] $argv[2]_$argv[1]
 end
 
+function setup_ros2
+    bash
+    source $HOME/ros2_humble/install/local_setup.bash
+end
+
 abbr -a -g cvim nvim ~/.vimrc
 # abbr -a -g cvim neovide --multigrid ~/.vimrc
