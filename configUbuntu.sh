@@ -14,13 +14,13 @@
 #                     |_|   \__,_|\___\___/ \__\___||___/
 
 sudo apt install -y \
-    build-essential git neovim nodejs luarocks autoconf ripgrep \
+    build-essential git nodejs luarocks autoconf ripgrep \
     sxiv fish curl flameshot zathura texlive-full gimp inkscape ipe npm cmake \
     clang clangd fd-find asciidoctor neofetch meld kitty figlet lolcat \
-    tty-clock cava dunst gnome-shell-extension-autohidetopbar playerctl \
+    tty-clock cava dunst playerctl \
     fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow \
     fzf libdlib-dev libopenblas-dev liblapack-dev libx11-dev libxpm-dev \
-    xscreensaver awesome arandr lxappearance
+    xscreensaver arandr lxappearance mpv rofi htop pulseeffects
 
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 sudo snap install shotcut --classic
@@ -33,7 +33,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cargo install exa
 # cargo install --git https://github.com/neovide/neovide
-# cargo install dust # Não funciona no ubuntu 20.04
+cargo install dust # Não funciona no ubuntu 20.04
 
 # Importante para gerar o arquivo de database de compilação na mão (compile_commands.json)
 pip install compiledb

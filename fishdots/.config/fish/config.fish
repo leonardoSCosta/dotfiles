@@ -1,6 +1,8 @@
 starship init fish | source
-export "BAT_THEME=Dracula"
+# export "BAT_THEME=Dracula"
+# fish_config theme save "Catppuccin Macchiato"
 export "EDITOR=nvim"
+fish_add_path -a ~/.local/bin
 # export "EDITOR=neovide --multigrid"
 
 # alias grsim=~/SSL/grSim/bin/grSim
@@ -29,6 +31,8 @@ alias lg='git status'
 alias update='sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt autoremove -y'
 alias spotify_inc_volume="playerctl -p spotify volume | xargs -I '{}' echo {}+0.1 | math | xargs -I '{}' playerctl -p spotify volume {}"
 alias spotify_dec_volume="playerctl -p spotify volume | xargs -I '{}' echo {}-0.1 | math | xargs -I '{}' playerctl -p spotify volume {}"
+alias rm=trash
+alias make_kitty_default="sudo update-alternatives --config x-terminal-emulator"
 
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -71,8 +75,10 @@ function cheat
 end
 
 function fish_greeting
-#     colorscript -r
-    please
+    nvm use lts/hydrogen >> /tmp/nvm_set
+    bass source /opt/ros/rolling/local_setup.bash
+    colorscript -r
+    # please
 end
 
 function bit
@@ -163,9 +169,24 @@ function prepend_n
 end
 
 function setup_ros2
-    bash
-    source $HOME/ros2_humble/install/local_setup.bash
+    bass source /opt/ros/rolling/local_setup.bash
+end
+
+function sum_row
+    cat $argv[1] | cut -d ';' -f$argv[2] | awk 'NR>3' | awk 'NR<21' | paste -sd+ - | bc
+end
+
+function svg_to_pdf
+    inkscape -D $argv.svg  -o $argv.pdf --export-latex
 end
 
 abbr -a -g cvim nvim ~/.vimrc
 # abbr -a -g cvim neovide --multigrid ~/.vimrc
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/leonardo/miniconda3/bin/conda
+    eval /home/leonardo/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+
