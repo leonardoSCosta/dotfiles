@@ -33,6 +33,7 @@ alias spotify_inc_volume="playerctl -p spotify volume | xargs -I '{}' echo {}+0.
 alias spotify_dec_volume="playerctl -p spotify volume | xargs -I '{}' echo {}-0.1 | math | xargs -I '{}' playerctl -p spotify volume {}"
 alias rm=trash
 alias make_kitty_default="sudo update-alternatives --config x-terminal-emulator"
+alias update_discord="sudo apt remove discord -y; sudo dpkg -i Downloads/discord-*.deb; rm Downloads/discord-*.deb "
 
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -76,8 +77,8 @@ end
 
 function fish_greeting
     nvm use lts/hydrogen >> /tmp/nvm_set
-    bass source /opt/ros/rolling/local_setup.bash
-    colorscript -r
+    bass source /opt/ros/humble/local_setup.bash
+    # colorscript -r
     # please
 end
 
@@ -182,6 +183,11 @@ end
 
 abbr -a -g cvim nvim ~/.vimrc
 # abbr -a -g cvim neovide --multigrid ~/.vimrc
+
+# >>> Config zoxide >>> 
+set -x _ZO_ECHO '0'
+zoxide init fish | source
+# <<< Config zoxide <<< 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

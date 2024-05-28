@@ -20,7 +20,7 @@ sudo apt install -y \
     tty-clock cava dunst playerctl \
     fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow \
     fzf libdlib-dev libopenblas-dev liblapack-dev libx11-dev libxpm-dev \
-    xscreensaver arandr lxappearance mpv rofi htop pulseeffects
+    xscreensaver arandr lxappearance mpv rofi htop pulseeffects zoxide
 
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 sudo snap install shotcut --classic
