@@ -77,7 +77,10 @@ end
 
 function fish_greeting
     nvm use lts/hydrogen >> /tmp/nvm_set
+
+    # ROS
     bass source /opt/ros/humble/local_setup.bash
+    register-python-argcomplete --shell fish ros2 | source
     # colorscript -r
     # please
 end
@@ -179,6 +182,15 @@ end
 
 function svg_to_pdf
     inkscape -D $argv.svg  -o $argv.pdf --export-latex
+end
+
+function ssh_cp
+    if count $argv > /dev/null
+        echo socialdroids@$argv[1]:/home/socialdroids/$argv[2]
+        scp -r socialdroids@$argv[1]:/home/socialdroids/$argv[2] .
+    else
+        echo "Insira o IP e caminho a partir do /home/socialdroids/ como argumentos"
+    end
 end
 
 abbr -a -g cvim nvim ~/.vimrc

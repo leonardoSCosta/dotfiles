@@ -23,6 +23,7 @@ sudo apt install -y \
     xscreensaver arandr lxappearance mpv rofi htop pulseeffects zoxide
 
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
+pip install argcomplete # Para completar argumentos
 sudo snap install shotcut --classic
 sudo npm install -g coinmon
 
