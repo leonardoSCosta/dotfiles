@@ -34,6 +34,7 @@ alias spotify_dec_volume="playerctl -p spotify volume | xargs -I '{}' echo {}-0.
 alias rm=trash
 alias make_kitty_default="sudo update-alternatives --config x-terminal-emulator"
 alias update_discord="sudo apt remove discord -y; sudo dpkg -i ~/Downloads/discord-*.deb; rm ~/Downloads/discord-*.deb "
+alias view_branches="git big-picture -a -f PDF -o branches.pdf; zathura branches.pdf"
 
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
@@ -191,6 +192,10 @@ function ssh_cp
     else
         echo "Insira o IP e caminho a partir do /home/socialdroids/ como argumentos"
     end
+end
+
+function sum_nfes
+    echo Soma dos valores das notas: R\$ (xml_grep --text_only 'vServ' *.xml | xargs  | sed -e 's/\ /+/g' | bc)
 end
 
 abbr -a -g cvim nvim ~/.vimrc
