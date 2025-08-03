@@ -3,6 +3,10 @@ starship init fish | source
 # fish_config theme save "Catppuccin Macchiato"
 export "EDITOR=nvim"
 fish_add_path -a ~/.local/bin
+fish_add_path -a ~/.juliaup/bin
+fish_add_path -a ~/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+fish_add_path -a /usr/local/texlive/2025/bin/x86_64-linux
+fish_add_path -a /usr/local/cuda/bin
 # export "EDITOR=neovide --multigrid"
 
 # alias grsim=~/SSL/grSim/bin/grSim

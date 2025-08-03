@@ -87,6 +87,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsM
 unzip JetBrainsMono.zip -d JetBrainsMono/
 mv JetBrainsMono/* ~/.fonts
 fc-cache -v
+sudo apt install fonts-font-awesome
 
 # ============================================================================
 #                      _____                   _             _
