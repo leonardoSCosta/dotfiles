@@ -40,6 +40,10 @@ alias make_kitty_default="sudo update-alternatives --config x-terminal-emulator"
 alias update_discord="sudo apt remove discord -y; sudo dpkg -i ~/Downloads/discord-*.deb; rm ~/Downloads/discord-*.deb "
 alias view_branches="git big-picture -a -f PDF -o branches.pdf; zathura branches.pdf"
 
+alias tese="kitty --session $HOME/Repositorios/Doutorado/kitty_session.conf"
+
+alias setup_esp=". /home/leonardo/esp/esp-idf/export.fish"
+
 function move_date
     mkdir Dia_$argv; la | rg $argv | awk '{print $7}'| xargs -I '{}' mv {}  Dia_$argv/
 end
@@ -87,7 +91,7 @@ function fish_greeting
     bass source /opt/ros/humble/local_setup.bash
     register-python-argcomplete --shell fish ros2 | source
     # colorscript -r
-    # please
+    please
 end
 
 function bit
@@ -217,3 +221,9 @@ if test -f /home/leonardo/miniconda3/bin/conda
 end
 # <<< conda initialize <<<
 
+function sd
+    set -gx ROBOT_NAMESPACE "/robot_1"
+    echo "Source ws_socialdroids"
+    bass source ~/ws_socialdroids/install/setup.bash
+    echo "ROBOT_NAMESPACE = $ROBOT_NAMESPACE"
+end
