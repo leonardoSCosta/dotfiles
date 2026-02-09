@@ -20,7 +20,7 @@ sudo apt install -y \
     tty-clock cava dunst playerctl \
     fontforge gucharmap libnotify-dev lsp-plugins valgrind libeigen3-dev stow \
     fzf libdlib-dev libopenblas-dev liblapack-dev libx11-dev libxpm-dev \
-    xscreensaver arandr lxappearance mpv rofi htop pulseeffects zoxide
+    xscreensaver arandr lxappearance mpv rofi htop pulseeffects zoxide btop s-tui
 
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 pip install argcomplete # Para completar argumentos
