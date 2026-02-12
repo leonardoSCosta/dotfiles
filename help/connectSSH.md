@@ -48,3 +48,17 @@ ssh-add /home/leonardo/.ssh/chave_teste
 Então, basta adicionar a chave pública (arquivo
 `/home/leonardo/.ssh/chave_teste.pub`) à conta do Github/Gitlab.
 
+
+# Conexão SSH entre máquinas
+
+- Gerar chave SSH na máquina fonte
+
+```shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+- Copiar chave SSH (.pub) para a máquina destino:
+
+```shell
+ssh-copy-id -i <nome_da_chave> user@<ip>
+```
