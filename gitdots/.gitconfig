@@ -9,11 +9,13 @@
   cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 # set "nvim" as tool for merging
 [merge]
-  tool = nvim
+	tool = meld
 # automatically launch merge tool without displaying a prompt
 [mergetool]
   prompt = false
 [diff]
 	submodule = log
+	tool = meld
 [merge "ours"]
 	driver = true
+[credential]

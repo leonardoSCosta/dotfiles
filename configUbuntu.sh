@@ -83,7 +83,7 @@ git clone https://github.com/dracula/zathura ~/.config/zathura/
 #                         |_|  \___/|_| |_|\__\___||___/
 
 mv .fonts $HOME
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d JetBrainsMono/
 mv JetBrainsMono/* ~/.fonts
 fc-cache -v

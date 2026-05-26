@@ -8,6 +8,7 @@ fish_add_path -a ~/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
 fish_add_path -a /usr/local/texlive/2025/bin/x86_64-linux
 fish_add_path -a /usr/local/cuda/bin
 # export "EDITOR=neovide --multigrid"
+export "GRPC_INSTALL_DIR=$HOME/.local"
 
 # alias grsim=~/SSL/grSim/bin/grSim
 alias tempo=~/.weather
@@ -206,6 +207,12 @@ function sum_nfes
     echo Soma dos valores das notas: R\$ (xml_grep --text_only 'vServ' *.xml | xargs  | sed -e 's/\ /+/g' | bc)
 end
 
+function init_conda
+    if test -f /home/leonardo/miniconda3/bin/conda
+        eval /home/leonardo/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    end
+end
+
 abbr -a -g cvim nvim ~/.vimrc
 # abbr -a -g cvim neovide --multigrid ~/.vimrc
 
@@ -216,9 +223,9 @@ zoxide init fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/leonardo/miniconda3/bin/conda
-    eval /home/leonardo/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-end
+# if test -f /home/leonardo/miniconda3/bin/conda
+#     eval /home/leonardo/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# end
 # <<< conda initialize <<<
 
 function sd
