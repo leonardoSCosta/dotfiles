@@ -103,12 +103,15 @@ function ..
     cd ..
 end
 
-function GitCommit
+function GitMCommit
     if count $argv > /dev/null
         git add --all; git commit -m $argv; git push
     else
         echo "Insira a mensagem de commit!"
     end
+end
+function GitCommit
+    git add --all; git commit; git push
 end
 
 function track_enable
