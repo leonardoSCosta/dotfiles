@@ -458,18 +458,29 @@ expand-right = false
 format-spacing = 1
 
 label-open = 
-label-open-font = 7
+label-open-font = 8
 label-open-foreground = ${colors.primary}
 label-close = 
 label-close-foreground = ${colors.error}
+label-close-font = 8
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = %{F#BD93F9}| %{F#FFB86C}
+menu-0-0 = %{F#BD93F9}| %{F#FFB86C} 
 menu-0-0-exec = python3 ~/.config/polybar/myScripts/switch_sound_sink.py -H 1
-menu-0-1 = %{F#50FA7B}
+menu-0-1 = %{F#50FA7B} 
 menu-0-1-exec = python3 ~/.config/polybar/myScripts/switch_sound_sink.py -B 1
 
+[module/taskmenu]
+type = custom/script
+# O script é executado a cada 1 segundo para manter a contagem regressiva em tempo real
+exec = python3 ~/.config/polybar/myScripts/task_manager.py
+interval = 30
+
+# Estilização básica (ajuste as cores conforme suas variáveis)
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 1
 
 [settings]
 screenchange-reload = true

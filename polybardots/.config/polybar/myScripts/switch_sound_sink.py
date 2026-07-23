@@ -29,15 +29,15 @@ if args.SOUND_BOX is not None:
 pulse = pulsectl.Pulse('sink-switch')
 sinks = pulse.sink_list()
 
-ICON_PATH = "/usr/share/icons/candy-icons/apps/scalable/"
+ICON_PATH = "/usr/share/icons/Yaru/48x48/apps/"
 
 HEADSET_STR = "Corsair HS60"
 HEADSET_INDEX = -1
-HEADSET_ICON = ICON_PATH + "info.mumble.Mumble.svg"
+HEADSET_ICON = ICON_PATH + "org.gnome.Music.png"
 
 SOUND_BOX_STR = "HDA NVidia"
 SOUND_BOX_INDEX = -1
-SOUND_BOX_ICON = ICON_PATH + "org.gnome.Rhythmbox.svg"
+SOUND_BOX_ICON = ICON_PATH + "org.gnome.Rhythmbox.png"
 
 DEFAULT_STR = "Áudio interno Estéreo analógico"
 DEFAULT_INDEX = -1
