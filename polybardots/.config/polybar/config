@@ -475,7 +475,7 @@ menu-0-1-exec = python3 ~/.config/polybar/myScripts/switch_sound_sink.py -B 1
 type = custom/script
 # O script é executado a cada 1 segundo para manter a contagem regressiva em tempo real
 exec = python3 ~/.config/polybar/myScripts/task_manager.py
-interval = 30
+interval = 1
 
 # Estilização básica (ajuste as cores conforme suas variáveis)
 format-background = ${colors.background}
